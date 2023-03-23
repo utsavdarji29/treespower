@@ -15,7 +15,7 @@
         <link rel="stylesheet" href="{{ asset('managerpanel/css/style.css') }}" >
         <link rel="stylesheet" href="{{ asset('managerpanel/css/responsive.css') }}" >
 
-        <style type="text/css">
+        <style type="text/css">dsfdfsfdf
         .info {
                 color: darkblue;
                 font-size: 18px;
