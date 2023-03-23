@@ -194,7 +194,7 @@
                                             </tr>
                                         </thead>
                                         <tbody>
-                                            <?
+                                            <!-- <?
                                             $counter1=0;
                                             
                                             foreach($data as $s)
@@ -243,7 +243,7 @@
                                             <?
                                         
                                             }
-                                            ?>
+                                            ?> -->
                                         </tbody>
                                     </table>
                                 </div>
