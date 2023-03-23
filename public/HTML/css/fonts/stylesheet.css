@@ -1,0 +1,65 @@
+@font-face {
+    font-family: 'SF Pro Text';
+    src: url('SFProText-Heavy.eot');
+    src: url('SFProText-Heavy.eot?#iefix') format('embedded-opentype'),
+        url('SFProText-Heavy.woff2') format('woff2'),
+        url('SFProText-Heavy.woff') format('woff'),
+        url('SFProText-Heavy.ttf') format('truetype'),
+        url('SFProText-Heavy.svg#SFProText-Heavy') format('svg');
+    font-weight: 900;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'SF Pro Text';
+    src: url('SFProText-Medium.eot');
+    src: url('SFProText-Medium.eot?#iefix') format('embedded-opentype'),
+        url('SFProText-Medium.woff2') format('woff2'),
+        url('SFProText-Medium.woff') format('woff'),
+        url('SFProText-Medium.ttf') format('truetype'),
+        url('SFProText-Medium.svg#SFProText-Medium') format('svg');
+    font-weight: 500;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'SF Pro Text';
+    src: url('SFProText-Light.eot');
+    src: url('SFProText-Light.eot?#iefix') format('embedded-opentype'),
+        url('SFProText-Light.woff2') format('woff2'),
+        url('SFProText-Light.woff') format('woff'),
+        url('SFProText-Light.ttf') format('truetype'),
+        url('SFProText-Light.svg#SFProText-Light') format('svg');
+    font-weight: 300;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'SF Pro Text';
+    src: url('SFProText-Regular.eot');
+    src: url('SFProText-Regular.eot?#iefix') format('embedded-opentype'),
+        url('SFProText-Regular.woff2') format('woff2'),
+        url('SFProText-Regular.woff') format('woff'),
+        url('SFProText-Regular.ttf') format('truetype'),
+        url('SFProText-Regular.svg#SFProText-Regular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'SF Pro Text';
+    src: url('SFProText-Regular_1.eot');
+    src: url('SFProText-Regular_1.eot?#iefix') format('embedded-opentype'),
+        url('SFProText-Regular_1.woff2') format('woff2'),
+        url('SFProText-Regular_1.woff') format('woff'),
+        url('SFProText-Regular_1.ttf') format('truetype'),
+        url('SFProText-Regular_1.svg#SFProText-Regular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+

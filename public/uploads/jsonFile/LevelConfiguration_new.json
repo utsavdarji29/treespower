@@ -1,0 +1,91 @@
+{
+	"Pack_1":	{ 
+		"Description":"Level 1-20",
+		"NumLevels":"20",
+		"UsualPrice":"$19.90",
+		"PromoPrice":"$0.00",
+		"Levels": 
+		[
+			{ "Level":"1","LevelColsRows":"6,6","NumberRange":"1,1","ChallengeNo":"2","AOperators":"+,-" },
+			{ "Level":"2","LevelColsRows":"6,6","NumberRange":"1,1","ChallengeNo":"3","AOperators":"+,-" },
+			{ "Level":"3","LevelColsRows":"6,6","NumberRange":"1,1","ChallengeNo":"7","AOperators":"+,-" },
+			{ "Level":"4","LevelColsRows":"6,6","NumberRange":"1,1","ChallengeNo":"9","AOperators":"+,-" },
+			{ "Level":"5","LevelColsRows":"6,6","NumberRange":"1,2","ChallengeNo":"3","AOperators":"+,-" },
+			{ "Level":"6","LevelColsRows":"6,6","NumberRange":"1,2","ChallengeNo":"5","AOperators":"+,-" },
+			{ "Level":"7","LevelColsRows":"6,6","NumberRange":"1,2","ChallengeNo":"7","AOperators":"+,-" },
+			{ "Level":"8","LevelColsRows":"6,6","NumberRange":"1,3","ChallengeNo":"7","AOperators":"+,-" },
+			{ "Level":"9","LevelColsRows":"6,6","NumberRange":"1,3","ChallengeNo":"11","AOperators":"+,-" },
+			{ "Level":"10","LevelColsRows":"6,6","NumberRange":"1,5","ChallengeNo":"7","AOperators":"+,-" },
+			{ "Level":"11","LevelColsRows":"6,6","NumberRange":"1,5","ChallengeNo":"9","AOperators":"+,-" },
+			{ "Level":"12","LevelColsRows":"6,6","NumberRange":"1,7","ChallengeNo":"12","AOperators":"+,-" },
+			{ "Level":"13","LevelColsRows":"6,6","NumberRange":"1,7","ChallengeNo":"15","AOperators":"+,-" },
+			{ "Level":"14","LevelColsRows":"6,6","NumberRange":"1,9","ChallengeNo":"9","AOperators":"+,-" },
+			{ "Level":"15","LevelColsRows":"6,6","NumberRange":"1,9","ChallengeNo":"12","AOperators":"+,-" },
+			{ "Level":"16","LevelColsRows":"6,6","NumberRange":"1,11","ChallengeNo":"9","AOperators":"+,-" },
+			{ "Level":"17","LevelColsRows":"6,6","NumberRange":"1,11","ChallengeNo":"12","AOperators":"+,-" },
+			{ "Level":"18","LevelColsRows":"6,6","NumberRange":"1,13","ChallengeNo":"9","AOperators":"+,-" },
+			{ "Level":"19","LevelColsRows":"6,6","NumberRange":"1,13","ChallengeNo":"12","AOperators":"+,-" },
+			{ "Level":"20","LevelColsRows":"6,6","NumberRange":"1,13","ChallengeNo":"15","AOperators":"+,-" }
+		]
+	},
+
+	"Pack_2":	{ 
+		"Description":"Level 21-40",
+		"NumLevels":"20",
+		"UsualPrice":"$19.90",
+		"PromoPrice":"$0.90", 
+		"Levels": 
+		[
+			{ "Level":"21","LevelColsRows":"6,6","NumberRange":"2,7","ChallengeNo":"7","AOperators":"+,-" },
+			{ "Level":"22","LevelColsRows":"6,6","NumberRange":"2,7","ChallengeNo":"9","AOperators":"+,-" },
+			{ "Level":"23","LevelColsRows":"6,6","NumberRange":"2,7","ChallengeNo":"11","AOperators":"+,-" },
+			{ "Level":"24","LevelColsRows":"6,6","NumberRange":"2,8","ChallengeNo":"8","AOperators":"+,-" },
+			{ "Level":"25","LevelColsRows":"6,6","NumberRange":"2,8","ChallengeNo":"10","AOperators":"+,-" },
+			{ "Level":"26","LevelColsRows":"6,6","NumberRange":"2,8","ChallengeNo":"12","AOperators":"+,-" },
+			{ "Level":"27","LevelColsRows":"6,6","NumberRange":"2,9","ChallengeNo":"9","AOperators":"+,-" },
+			{ "Level":"28","LevelColsRows":"6,6","NumberRange":"2,9","ChallengeNo":"11","AOperators":"+,-" },
+			{ "Level":"29","LevelColsRows":"6,6","NumberRange":"2,9","ChallengeNo":"13","AOperators":"+,-" },
+			{ "Level":"30","LevelColsRows":"6,6","NumberRange":"2,10","ChallengeNo":"10","AOperators":"+,-" },
+			{ "Level":"31","LevelColsRows":"6,6","NumberRange":"2,10","ChallengeNo":"12","AOperators":"+,-" },
+			{ "Level":"32","LevelColsRows":"6,6","NumberRange":"2,10","ChallengeNo":"14","AOperators":"+,-" },
+			{ "Level":"33","LevelColsRows":"6,6","NumberRange":"2,11","ChallengeNo":"11","AOperators":"+,-" },
+			{ "Level":"34","LevelColsRows":"6,6","NumberRange":"2,11","ChallengeNo":"13","AOperators":"+,-" },
+			{ "Level":"35","LevelColsRows":"6,6","NumberRange":"2,11","ChallengeNo":"15","AOperators":"+,-" },
+			{ "Level":"36","LevelColsRows":"6,6","NumberRange":"2,12","ChallengeNo":"12","AOperators":"+,-" },
+			{ "Level":"37","LevelColsRows":"6,6","NumberRange":"2,12","ChallengeNo":"14","AOperators":"+,-" },
+			{ "Level":"38","LevelColsRows":"6,6","NumberRange":"2,12","ChallengeNo":"16","AOperators":"+,-" },
+			{ "Level":"39","LevelColsRows":"6,6","NumberRange":"2,13","ChallengeNo":"13","AOperators":"+,-" },
+			{ "Level":"40","LevelColsRows":"6,6","NumberRange":"2,13","ChallengeNo":"15","AOperators":"+,-" }
+		]
+	},
+
+	"Pack_3":	{ 
+		"Description":"Level 41-60",
+		"NumLevels":"20",
+		"UsualPrice":"$19.90",
+		"PromoPrice":"$1.90", 
+		"Levels": 
+		[
+			{ "Level":"41","LevelColsRows":"6,6","NumberRange":"3,7","ChallengeNo":"7","AOperators":"+,-" },
+			{ "Level":"42","LevelColsRows":"6,6","NumberRange":"3,7","ChallengeNo":"9","AOperators":"+,-" },
+			{ "Level":"43","LevelColsRows":"6,6","NumberRange":"3,7","ChallengeNo":"11","AOperators":"+,-" },
+			{ "Level":"44","LevelColsRows":"6,6","NumberRange":"3,8","ChallengeNo":"8","AOperators":"+,-" },
+			{ "Level":"45","LevelColsRows":"6,6","NumberRange":"3,8","ChallengeNo":"10","AOperators":"+,-" },
+			{ "Level":"46","LevelColsRows":"6,6","NumberRange":"3,8","ChallengeNo":"12","AOperators":"+,-" },
+			{ "Level":"47","LevelColsRows":"6,6","NumberRange":"3,9","ChallengeNo":"9","AOperators":"+,-" },
+			{ "Level":"48","LevelColsRows":"6,6","NumberRange":"3,9","ChallengeNo":"11","AOperators":"+,-" },
+			{ "Level":"49","LevelColsRows":"6,6","NumberRange":"3,9","ChallengeNo":"13","AOperators":"+,-" },
+			{ "Level":"50","LevelColsRows":"6,6","NumberRange":"3,10","ChallengeNo":"10","AOperators":"+,-" },
+			{ "Level":"51","LevelColsRows":"6,6","NumberRange":"3,10","ChallengeNo":"12","AOperators":"+,-" },
+			{ "Level":"52","LevelColsRows":"6,6","NumberRange":"3,10","ChallengeNo":"14","AOperators":"+,-" },
+			{ "Level":"53","LevelColsRows":"6,6","NumberRange":"3,11","ChallengeNo":"11","AOperators":"+,-" },
+			{ "Level":"54","LevelColsRows":"6,6","NumberRange":"3,11","ChallengeNo":"13","AOperators":"+,-" },
+			{ "Level":"55","LevelColsRows":"6,6","NumberRange":"3,11","ChallengeNo":"15","AOperators":"+,-" },
+			{ "Level":"56","LevelColsRows":"6,6","NumberRange":"3,12","ChallengeNo":"12","AOperators":"+,-" },
+			{ "Level":"57","LevelColsRows":"6,6","NumberRange":"3,12","ChallengeNo":"14","AOperators":"+,-" },
+			{ "Level":"58","LevelColsRows":"6,6","NumberRange":"3,12","ChallengeNo":"16","AOperators":"+,-" },
+			{ "Level":"59","LevelColsRows":"6,6","NumberRange":"3,13","ChallengeNo":"13","AOperators":"+,-" },
+			{ "Level":"60","LevelColsRows":"6,6","NumberRange":"3,13","ChallengeNo":"15","AOperators":"+,-" }
+		]
+	},
+}

@@ -1,0 +1,11 @@
+[14-Oct-2021 22:22:52 Asia/Singapore] PHP Warning:  count(): Parameter must be an array or an object that implements Countable in /home/treespow/public_html/treespower/public/qrDemo/index.php on line 48
+[14-Oct-2021 22:38:27 Asia/Singapore] PHP Fatal error:  Uncaught Error: Call to undefined function public_path() in /home/treespow/public_html/treespower/public/qrDemo/index.php:47
+Stack trace:
+#0 {main}
+  thrown in /home/treespow/public_html/treespower/public/qrDemo/index.php on line 47
+[14-Oct-2021 22:39:27 Asia/Singapore] PHP Fatal error:  Uncaught Error: Call to undefined function public_path() in /home/treespow/public_html/treespower/public/qrDemo/index.php:47
+Stack trace:
+#0 {main}
+  thrown in /home/treespow/public_html/treespower/public/qrDemo/index.php on line 47
+[15-Oct-2021 15:13:02 Asia/Singapore] PHP Warning:  urldecode() expects parameter 1 to be string, array given in /home/treespow/public_html/treespower/public/qrDemo/index.php on line 76
+[04-Dec-2021 13:24:17 Asia/Singapore] PHP Fatal error:  Cannot declare class qrstr, because the name is already in use in /home/treespow/public_html/treespower/public/qrDemo/libs/phpqrcode/phpqrcode.php on line 98

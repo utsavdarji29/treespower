@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Admin Users</title>
+        <link rel="stylesheet" href="css/bootstrap.min.css">
+        <link rel="stylesheet" href="css/fontawesome-all.css" >
+        <link rel="stylesheet" href="css/searchboxstyle.css">
+        <link rel="stylesheet" href="css/slick.css">
+        <link rel="stylesheet" href="css/slick-theme.css">
+        <link rel="stylesheet" href="css/style.css" >
+        <link rel="stylesheet" href="css/responsive.css" >
+    </head>
+    <body>
+        <div class="main" id="main-site" style="background-image: url('images/login-bg.png');">
+            <div class="admin-dashboard operator-dashboard">
+                <div class="container">
+                    <div class="admin-dashboard-main">
+                        <div class="admin-dashboard-leftsidebar">
+                            <div class="admin-dashboard-leftsidebar-bg-part">
+                                <div class="admin-dashboard-logo">
+                                    <a href="javascript:;">
+                                    <img src="images/Logo_img.png">
+                                    </a>
+                                </div>
+                                <div class="admin-dashboard-menu-part">
+                                    <ul>
+                                        <li>
+                                            <a href="javascript:;">
+                                            <img src="images/dashboard-icn.png">
+                                            <span>DASHBOARD</span>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="javascript:;"  class="active">
+                                            <img src="images/Users-icn.png">
+                                            <span>Manage Users</span>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="javascript:;">
+                                            <img src="images/Area.png">
+                                            <span>Manage Areas</span>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="javascript:;">
+                                            <img src="images/clc-icn.png">
+                                            <span>TASKS Schedule</span>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="javascript:;">
+                                            <img src="images/report-icn.png">
+                                            <span>REPORTS<span class="badge"></span></span>
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div class="admin-dashboard-messages-icn">
+                                    <ul>
+                                        <li>
+                                            <a href="javascript:;">
+                                            <img src="images/Union.png">
+                                            <span>Messages<span class="badge"></span></span>
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="admin-dashboard-right">
+                            <div class="admin-dashboard-searchbar-part">
+                                <div class="admin-dashboard-searchbar">
+                                    <span class="search-icn"><img src="images/search.png"></span>
+                                    <input type="text" name="Search" placeholder="Search" class="search-sm">
+                                </div>
+                                <div class="admin-dashboard-right-dtl">
+                                    <h4>Hi Jeffrey! You are admin</h4>
+                                    <div class="admin-notification">
+                                        <img src="images/bell.png">
+                                        <span class="noti-dig">+99</span>
+                                    </div>
+                                    <div class="admin-login-pr blue-border">
+                                        <img src="images/men.png">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="admin-dashboard-user-dtl">
+                                <div class="admin-dashboard-user-left-dtl">
+                                    <div class="admin-dashboard-user-name">
+                                        <h2>USERS: (<span>69</span>)</h2>
+                                    </div>
+                                    <div class="admin-dashboard-user-sm-list">
+                                        <ul>
+                                            <li>Admins:<strong>4</strong></li>
+                                            <li>Managers:<strong>12</strong></li>
+                                            <li>Operators:<strong>53</strong></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                <div class="admin-dashboard-user-right-dtl">
+                                    <div class="admin-dashboard-sing-plus-icon">
+                                        <a href="javascript:;"><img src="images/plus.png"></a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="admin-list-part">
+                                <div class="admin-dashboard-list-box">
+                                    <table>
+                                        <thead>
+                                            <tr>
+                                                <th>
+                                                    <div class="users-name">
+                                                        <select class="users-name-select">
+                                                            <option value="0">Name</option>
+                                                            <option value="0">Name2</option>
+                                                        </select>
+                                                        <input type="text" name="Start typing" placeholder="Start typing" class="user-name-search">
+                                                    </div>
+                                                </th>
+                                                <th>
+                                                    <div class="users-name" style="text-align: right;">
+                                                        <select class="users-name-select">
+                                                            <option value="0">Edited</option>
+                                                            <option value="0">Edited2</option>
+                                                        </select>
+                                                    </div>
+                                                </th>
+                                                <th>
+                                                    <div class="users-name" style="text-align: right;padding-left: 12px;">
+                                                        <select class="users-name-select">
+                                                            <option value="0">Role</option>
+                                                            <option value="0">Role2</option>
+                                                        </select>
+                                                    </div>
+                                                </th>
+                                                <th>
+                                                    <div class="edit-select">
+                                                        <select class="users-name-select">
+                                                            <option value="0">Edit selected</option>
+                                                            <option value="0">Edit selected2</option>
+                                                        </select>
+                                                    </div>
+                                                </th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td>
+                                                   <div class="user-pic-dtl">
+                                                       <label class="user-check">
+                                                          <input type="checkbox">
+                                                          <span class="checkmark"></span>
+                                                        </label>
+                                                        <div class="user-sm-pick-name">
+                                                            <div class="admin-login-pr">
+                                                                <img src="images/men.png">
+                                                            </div>
+                                                            <h5>John Doe</h5>
+                                                        </div>
+                                                   </div> 
+                                                </td>
+                                                <td style="text-align: right;width: 20%;">03.03.2021</td>
+                                                <td style="padding-left: 12px;">Manager</td>
+                                                <td style="text-align: right;width: 24%">
+                                                    <div class="users-edit">
+                                                        <a href="javascript:;">
+                                                            <img src="images/pen.png">
+                                                            Edit
+                                                        </a>
+                                                        <a href="javascript:;">
+                                                            <img src="images/blue-eye.png">
+                                                        </a>
+                                                    </div>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>
+                                                   <div class="user-pic-dtl">
+                                                       <label class="user-check">
+                                                          <input type="checkbox" checked="">
+                                                          <span class="checkmark"></span>
+                                                        </label>
+                                                        <div class="user-sm-pick-name">
+                                                            <div class="admin-login-pr yellow-border">
+                                                                <img src="images/lady3.png">
+                                                            </div>
+                                                            <h5>Susane Dores</h5>
+                                                        </div>
+                                                   </div> 
+                                                </td>
+                                                <td style="text-align: right;width: 20%;">
+                                                    <div class="details-box">
+                                                        03.03.2021
+                                                        <div class="details-box-hover">Deatails →</div>
+                                                    </div>
+                                                </td>
+                                                <td style="padding-left: 12px;">Manager</td>
+                                                <td style="text-align: right;">
+                                                    <div class="users-edit">
+                                                        <a href="javascript:;">
+                                                            <img src="images/pen.png">
+                                                            Edit
+                                                        </a>
+                                                        <a href="javascript:;">
+                                                            <img src="images/blue-eye.png">
+                                                        </a>
+                                                    </div>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>
+                                                   <div class="user-pic-dtl">
+                                                       <label class="user-check">
+                                                          <input type="checkbox">
+                                                          <span class="checkmark"></span>
+                                                        </label>
+                                                        <div class="user-sm-pick-name">
+                                                            <div class="admin-login-pr green-border">
+                                                                <img src="images/lady4.png">
+                                                            </div>
+                                                            <h5>Natalia Arero</h5>
+                                                        </div>
+                                                   </div> 
+                                                </td>
+                                                <td style="text-align: right;width: 20%;">03.03.2021</td>
+                                                <td style="padding-left: 12px;">Operator</td>
+                                                <td style="text-align: right;width: 24%">
+                                                    <div class="users-edit">
+                                                        <a href="javascript:;">
+                                                            <img src="images/pen.png">
+                                                            Edit
+                                                        </a>
+                                                        <a href="javascript:;">
+                                                            <img src="images/blue-eye.png">
+                                                        </a>
+                                                    </div>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>
+                                                   <div class="user-pic-dtl">
+                                                       <label class="user-check">
+                                                          <input type="checkbox">
+                                                          <span class="checkmark"></span>
+                                                        </label>
+                                                        <div class="user-sm-pick-name">
+                                                            <div class="admin-login-pr">
+                                                                <img src="images/men.png">
+                                                            </div>
+                                                            <h5>John Doe</h5>
+                                                        </div>
+                                                   </div> 
+                                                </td>
+                                                <td style="text-align: right;width: 20%;">03.03.2021</td>
+                                                <td style="padding-left: 12px;">Manager</td>
+                                                <td style="text-align: right;width: 24%">
+                                                    <div class="users-edit">
+                                                        <a href="javascript:;">
+                                                            <img src="images/pen.png">
+                                                            Edit
+                                                        </a>
+                                                        <a href="javascript:;">
+                                                            <img src="images/blue-eye.png">
+                                                        </a>
+                                                    </div>
+                                                </td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                    <div class="admin-dashboard-bottom-dtl">
+                                        <div class="admin-dashboard-bottom-left">
+                                            <nav aria-label="Page navigation example">
+                                                <ul class="pagination">
+                                                    <li class="page-item"><a class="page-link disble" href="javascript:;">Prev</a></li>
+                                                    <li class="page-item"><a class="page-link active" href="javascript:;">1</a></li>
+                                                    <li class="page-item"><a class="page-link" href="javascript:;">2</a></li>
+                                                    <li class="page-item"><a class="page-link" href="javascript:;">3</a></li>
+                                                    <li class="page-item"><a class="page-link" href="javascript:;">Next</a></li>
+                                                </ul>
+                                            </nav>
+                                        </div>
+                                        <div class="admin-dashboard-bottom-left admin-dashboard-bottom-right">
+                                            <div class="admin-dashboard-bottom-select">
+                                                <select class="ad-dsh-select">
+                                                    <option value="">Edit selected</option>
+                                                    <option value="">Edit selected1</option>
+                                                </select>
+                                                <div class="admin-edit-delete">
+                                                    <a href="javascript:;">Delete</a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <script src="js/jquery.min.js"></script>
+        <script src="js/bootstrap.min.js"></script>
+        <script src="js/slick.min.js"></script>
+    </body>
+</html>

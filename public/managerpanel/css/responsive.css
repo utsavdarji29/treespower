@@ -1,0 +1,479 @@
+
+
+@media screen and (min-width:1241px) and (max-width:1500px){
+.container{
+	max-width: 96% !important;
+}
+	
+	/*adduser*/
+	.user-details-modal-main.add-users-sub-dtl .user-details-modal-main.add-users-sub-dtl{padding: 0px;}
+	.user-personla-dtl-right-side{padding-left: 30px;}
+
+	.add-users-fr-sec-inp .col-lg-4{max-width: 50%;flex: 0 0 50%;padding: 0px 15px;}
+
+	/*edittree*/
+	.edit-tree-left-sidebar{width: 270px;}
+	.edit-tree-right-sidebar{width: calc(100% - 270px);}
+	.admin-dashboard-box-main.edit-tree-main-page .edit-tree-right-sidebar .col-lg-6{max-width: 100%;flex: 0 0 100%;}
+	.admin-dashboard-box-main.edit-tree-main-page .edit-tree-right-sidebar .add-us-inp{margin-bottom: 20px;}
+
+}
+@media screen and (min-width:1025px) and (max-width:1240px){
+.container{
+	max-width: 96% !important;
+}
+	/*login-page*/
+	.login-page-main{padding: 70px 50px 70px;}
+	.login-form-part-main{margin-top: 55px;}
+
+	/*dashboard*/
+	.admin-dashboard-sing-box{padding: 20px;min-height: 310px;}
+	.admin-dashboard-sing-box-head h1{font-size: 54px;}
+	.admin-dashboard-sing-box-head h2{font-size: 36px;}
+	.admin-dashboard-sm-dtl h2 strong{font-size: 34px;}
+	.admin-dashboard-sm-dtl{padding-bottom: 10px;}
+	.admin-dashboard-sing-plus-icon{width: 75px;height: 75px;right: 20px;bottom: 30px;}
+	.admin-dashboard-menu-part ul li a{padding: 24px;}
+	.admin-dashboard-leftsidebar-bg-part{min-height: 750px;}
+
+	/*manageuser*/
+	.admin-dashboard-searchbar-part{padding: 24px 30px;}
+	.admin-dashboard-right-dtl h4{font-size: 22px;}
+	.admin-notification{margin-right: 35px;}
+	.admin-dashboard-list-box table tr th{font-size: 22px;}
+	.admin-dashboard-user-dtl{padding: 15px 40px 50px;}
+	.admin-dashboard-list-box table tbody td:nth-child(2){padding-left: 30px;}
+	.admin-dashboard-list-box table thead{padding: 0px 20px 30px;}
+	.admin-dashboard-bottom-dtl{padding: 45px 30px 0px;}
+
+
+	/*adduser*/
+	.user-details-modal-main{padding: 30px;}
+	.user-details-modal-main.add-users-sub-dtl .user-details-modal-main.add-users-sub-dtl{padding: 0px;}
+	.user-personla-dtl-right-side{padding-left: 30px;width: calc(100% - 200px);}
+	.add-users-fr-sec-inp .col-lg-4{max-width: 50%;flex: 0 0 50%;}
+	.add-users-fr-sec-inp .col-lg-8, .add-users-fr-sec-inp .col-lg-4 {padding: 0px 10px;}
+	.modal-footer{padding: 0px 42px 42px;}
+	.edit-account-img{width: 200px;height: 200px;}
+	.user-details-head h2{font-size: 38px;}
+
+	/*managejob*/
+	.Manager-task-user-dtl .admin-dashboard-user-sm-list{padding-left: 0px;}
+	.admin-dashboard-user-sm-list ul li{padding-left: 10px;}
+	.admin-dashboard-user-sm-list ul li strong{font-size: 20px;padding-left: 5px;}
+	.admin-dashboard-user-name h2{font-size: 36px;}
+
+	/*edittree*/
+	.edit-tree-left-sidebar{width: 270px;}
+	.edit-tree-right-sidebar{width: calc(100% - 270px);padding-left: 20px;}
+	.admin-dashboard-box-main.edit-tree-main-page .edit-tree-right-sidebar .col-lg-6{max-width: 100%;flex: 0 0 100%;}
+	.admin-dashboard-box-main.edit-tree-main-page .edit-tree-right-sidebar .add-us-inp{margin-bottom: 20px;}
+
+	/*managetree*/
+	.manage-tree-dtl-part .dataTables_wrapper .row:nth-child(2){width: 100%;margin: 0;}
+	.manage-tree-dtl-part table#example{width: 1000px;}
+	.manage-tree-dtl-part .dataTables_wrapper .row:nth-child(2) .col-sm-12 {display: inline-block;white-space: nowrap;overflow: auto;padding: 0px;}
+	.manage-tree-page-page .admin-dashboard-list-box.manage-tree-dtl-part table tbody td:first-child{text-align: left !important;}
+	.manage-tree-page-page .admin-dashboard-list-box.manage-tree-dtl-part table tbody td:nth-child(2) {padding-left: 0;white-space: normal;width: 400px !important;max-width: 400px;}
+	.manage-tree-dtl-part #example_filter label input.form-control.form-control-sm{width: calc(100% - 80px);}
+}
+
+@media screen and (min-width:992px) and (max-width:1024px){
+.container{
+	max-width: 96% !important;
+}	
+    /*login-page*/
+	.login-page-main{padding: 50px 50px 50px;}
+	.login-form-part-main{margin-top: 55px;}
+	
+	/*dashboard*/
+	.admin-dashboard-sing-box{padding: 20px;min-height: 310px;}
+	.admin-dashboard-sing-box-head h1{font-size: 50px;}
+	.admin-dashboard-sing-box-head h2{font-size: 36px;}
+	.admin-dashboard-sm-dtl h2 strong{font-size: 34px;}
+	.admin-dashboard-sm-dtl{padding-bottom: 10px;}
+	.admin-dashboard-sing-plus-icon{width: 70px;height: 70px;right: 20px;bottom: 30px;}
+	.admin-dashboard-menu-part ul li a{padding: 20px;}
+	.admin-dashboard-leftsidebar-bg-part{min-height: 670px;}
+	.admin-dashboard-main{padding: 30px 30px 0px;}
+	.admin-dashboard-logo{padding: 30px;}
+	.admin-dashboard-sing-box-head {padding-bottom: 10px;}
+	.admin-dashboard-searchbar-part{padding: 20px 30px;margin-bottom: 30px;}
+	.admin-dashboard-right{padding-left: 30px;}
+	.admin-login-pr{width: 50px;height: 50px;}
+
+	/*manageuser*/
+	.admin-dashboard-right-dtl h4{font-size: 22px;}
+	.admin-notification{margin-right: 30px;}
+	.admin-dashboard-list-box table tr th{font-size: 22px;}
+	.admin-dashboard-user-dtl{padding: 15px 40px 50px;}
+	.admin-dashboard-list-box table tbody td:nth-child(2){padding-left: 30px;}
+	.admin-dashboard-list-box table thead{padding: 0px 20px 30px;}
+	.admin-dashboard-bottom-dtl{padding: 45px 30px 0px;}
+	.admin-dashboard-user-name h2{font-size: 38px;}
+
+	/*adduser*/
+	.user-details-modal-main{padding: 30px;}
+	.user-details-modal-main.add-users-sub-dtl .user-details-modal-main.add-users-sub-dtl{padding: 0px;}
+	.user-personla-dtl-right-side{padding-left: 20px;width: calc(100% - 160px);}
+	.add-users-fr-sec-inp .col-lg-4{max-width: 50%;flex: 0 0 50%;}
+	.add-users-fr-sec-inp .col-lg-8, .add-users-fr-sec-inp .col-lg-4 {padding: 0px 10px;}
+	.modal-footer{padding: 0px 30px 30px;}
+	.edit-account-img{width: 160px;height: 160px;}
+	.user-details-head h2{font-size: 38px;}
+	.admin-dashboard-box-main{width: 100%;margin: 0px;}
+	.add-us-inp{margin-bottom: 30px;}
+
+	/*managejob*/
+	.Manager-task-user-dtl .admin-dashboard-user-sm-list{padding-left: 0px;}
+	.admin-dashboard-user-sm-list ul li{padding-left: 10px;}
+	.admin-dashboard-user-sm-list ul li strong{font-size: 20px;padding-left: 5px;}
+	.admin-dashboard-user-name h2{font-size: 36px;}
+	.manager-tree-table{display: inline-block;white-space: nowrap;overflow: auto;}
+	.manager-task-list-part-main .admin-dashboard-list-box table tbody td:first-child{padding-left: 20px;text-align: center !important;}
+	.admin-dashboard-list-box .manager-tree-table table tbody td{padding: 25px 10px;}
+	.manager-tree-table .users-edit{width: 80px;padding-right: 10px;}
+
+	/*editjob*/
+	.user-details-modal-main.add-users-sub-dtl{margin: 0px;}
+	.user-personla-dtl-right-side.user-editjob-main .add-users-fr-sec-inp .col-lg-5{max-width: 50%;flex: 0 0 50%;}
+
+	/*edittree*/
+	.edit-tree-left-sidebar{width: 270px;}
+	.edit-tree-right-sidebar{width: calc(100% - 270px);padding-left: 20px;}
+	.admin-dashboard-box-main.edit-tree-main-page .edit-tree-right-sidebar .col-lg-6{max-width: 100%;flex: 0 0 100%;}
+	.admin-dashboard-box-main.edit-tree-main-page .edit-tree-right-sidebar .add-us-inp{margin-bottom: 20px;}
+	.user-details-modal-main.add-users-sub-dtl{margin: 0px;}
+
+	/*viewjob*/
+	.view-job-table table tbody tr td{font-size: 16px;padding: 10px;}
+	.user-personla-dtl{padding-top: 30px;}
+
+	/*managetree*/
+	.manage-tree-dtl-part .dataTables_wrapper .row:nth-child(2){width: 100%;margin: 0;}
+	.manage-tree-dtl-part table#example{width: 1000px;}
+	.manage-tree-dtl-part .dataTables_wrapper .row:nth-child(2) .col-sm-12 {display: inline-block;white-space: nowrap;overflow: auto;padding: 0px;}
+	.manage-tree-page-page .admin-dashboard-list-box.manage-tree-dtl-part table tbody td:first-child{text-align: left !important;}
+	.manage-tree-page-page .admin-dashboard-list-box.manage-tree-dtl-part table tbody td:nth-child(2) {padding-left: 0;white-space: normal;width: 400px !important;max-width: 400px;}
+	.manage-tree-dtl-part #example_filter label input.form-control.form-control-sm{width: calc(100% - 80px);}
+	.manager-task-list-name{padding: 0px 30px 30px;}
+	.manage-tree-dtl-part .manager-task-list-name-left h4{font-size: 32px;}
+	
+}
+
+@media screen and (min-width:768px) and (max-width:991px){
+.container{
+	max-width: 96% !important;
+}
+	 /*login-page*/
+	.login-page-main{padding: 50px 50px 50px;}
+	.login-form-part-main{margin-top: 55px;}
+
+	/*dashboard*/
+	.admin-dashboard-sing-box{padding: 20px;min-height: 310px;}
+	.admin-dashboard-sing-box-head h1{font-size: 46px;}
+	.admin-dashboard-sing-box-head h2{font-size: 30px;}
+	.admin-dashboard-sm-dtl h2 strong{font-size: 34px;}
+	.admin-dashboard-sm-dtl h2{font-size: 20px;}
+	.admin-dashboard-sm-dtl{padding-bottom: 10px;}
+	.admin-dashboard-sing-plus-icon{width: 70px;height: 70px;right: 20px;bottom: 20px;}
+	.admin-dashboard-menu-part ul li a{padding: 20px;}
+	.admin-dashboard-leftsidebar-bg-part{min-height: 670px;}
+	.admin-dashboard-main{padding: 20px 20px 0px;}
+	.admin-dashboard-logo{padding: 20px;}
+	.admin-dashboard-sing-box-head {padding-bottom: 10px;}
+	.admin-dashboard-searchbar-part{padding: 10px 20px;margin-bottom: 20px;}
+	.admin-dashboard-right{padding-left: 20px;}
+	.admin-login-pr{width: 50px;height: 50px;}
+	.admin-dashboard-box-main .col-lg-6 {padding: 0px 15px 30px;max-width: 100%;flex: 0 0 100%;}
+	.admin-dashboard-box-main{width: calc(100% + 30px);margin: 0px -15px;}
+	.admin-dashboard-right-dtl h4{font-size: 20px;}
+	.admin-dashboard-right{padding-bottom: 30px;}
+	.admin-dashboard-leftsidebar{padding-bottom: 30px;}
+
+
+	/*manageuser*/
+	.admin-notification{margin-right: 30px;}
+	.admin-dashboard-list-box table tr th{font-size: 20px;}
+	.admin-dashboard-user-dtl{padding: 10px 30px 30px;}
+	.admin-dashboard-list-box table thead{padding: 0px 20px 30px;}
+	.admin-dashboard-bottom-dtl{padding: 30px 30px 0px;}
+	.admin-dashboard-user-name h2{font-size: 34px;}
+	.admin-dashboard-list-box{display: inline-block;white-space: nowrap;overflow: auto;padding: 30px 0px;}
+	.admin-dashboard-list-box table tbody td{padding: 15px 10px;text-align: center !important;}
+	.admin-dashboard-list-box table tr th{padding: 0px 10px;text-align: center !important;}
+	.admin-dashboard-user-name h2 span{font-size: 36px;}
+	.admin-dashboard-searchbar{width: 100%;}
+	.admin-dashboard-searchbar form#search_form{width: 100%;margin-bottom: 10px;}
+	.admin-dashboard-searchbar .search-sm{max-width: 80%;}
+
+	/*adduser*/
+	.user-details-modal-main{padding: 30px;}
+	.user-details-modal-main.add-users-sub-dtl .user-details-modal-main.add-users-sub-dtl{padding: 0px;}
+	.user-personla-dtl-right-side{padding-left: 0px;padding-top: 20px; width:100%;}
+	.add-users-fr-sec-inp .col-lg-4{max-width: 50%;flex: 0 0 50%;}
+	.add-users-fr-sec-inp .col-lg-8, .add-users-fr-sec-inp .col-lg-4 {padding: 0px 10px;}
+	.modal-footer{padding: 0px 30px 30px;}
+	.edit-account-img{width: 180px;height: 180px;}
+	.user-details-head h2{font-size: 38px;}
+	.admin-dashboard-box-main{width: 100%;margin: 0px;}
+	.add-us-inp{margin-bottom: 30px;}
+	.user-personla-dtl{padding-top: 30px;}
+	.add-users-fr-sec-inp .col-lg-8, .add-users-fr-sec-inp .col-lg-4 {padding: 0px 10px; max-width: 100%;flex: auto;}
+
+	/*managejob*/
+	.Manager-task-user-dtl .admin-dashboard-user-sm-list{padding-left: 0px;width: 100%;padding-top: 10px;margin: 0px 0px 0px -10px;}
+	.admin-dashboard-user-sm-list ul li{padding-left: 10px;}
+	.admin-dashboard-user-sm-list ul li strong{font-size: 20px;padding-left: 5px;}
+	.admin-dashboard-user-name h2{font-size: 36px;}
+	.manager-tree-table{display: inline-block;white-space: nowrap;overflow: auto;}
+	.manager-task-list-part-main .admin-dashboard-list-box table tbody td:first-child{padding-left: 20px;text-align: center !important;}
+	.admin-dashboard-list-box .manager-tree-table table tbody td{padding: 25px 10px;}
+	.manager-tree-table .users-edit{width: 80px;padding-right: 10px;}
+	.manager-task-list-name{padding: 0px 30px 30px;}
+	.admin-dashboard-list-box .manager-tree-table table thead tr td{text-align: center !important;}
+	.admin-dashboard-list-box .manager-tree-table table thead tr td:last-child{text-align: right !important;}
+
+	/*editjob*/
+	.user-details-modal-main.add-users-sub-dtl{margin: 0px;}
+	.user-personla-dtl-right-side.user-editjob-main .add-users-fr-sec-inp .col-lg-5{max-width: 100%;flex: 0 0 100%;}
+
+	/*edittree*/
+	.edit-tree-left-sidebar{width: 100%;}
+	.edit-tree-right-sidebar{width: 100%;padding:20px 0px 0px;}
+	.admin-dashboard-box-main.edit-tree-main-page .edit-tree-right-sidebar .col-lg-6{max-width: 100%;flex: 0 0 100%;}
+	.admin-dashboard-box-main.edit-tree-main-page .edit-tree-right-sidebar .add-us-inp{margin-bottom: 20px;}
+	.user-details-modal-main.add-users-sub-dtl{margin: 0px;}
+
+	
+	/*viewjob*/
+	.view-job-table table tbody tr td{font-size: 16px;padding: 10px;}
+	.user-personla-dtl{padding-top: 30px;}
+	.user-details-head h2{font-size: 32px;}
+	.view-job-table{display: inline-block;white-space: nowrap;overflow: auto;}
+	.view-job-table table tbody tr td:last-child{width: 500px;max-width: 500px;white-space: normal;}
+	.view-job-table table{width: 1000px !important;}
+
+	/*managetree*/
+	.manage-tree-dtl-part .dataTables_wrapper .row:nth-child(2){width: 100%;margin: 0;}
+	.manage-tree-dtl-part table#example{width: 1000px;}
+	.manage-tree-dtl-part .dataTables_wrapper .row:nth-child(2) .col-sm-12 {display: inline-block;white-space: nowrap;overflow: auto;padding: 0px;}
+	.manage-tree-page-page .admin-dashboard-list-box.manage-tree-dtl-part table tbody td:first-child{text-align: left !important;}
+	.manage-tree-page-page .admin-dashboard-list-box.manage-tree-dtl-part table tbody td:nth-child(2) {padding-left: 10px;white-space: normal;width: 400px !important;max-width: 400px;}
+	.manage-tree-dtl-part #example_filter label input.form-control.form-control-sm{width: calc(100% - 80px);}
+	.manage-tree-page-page .admin-dashboard-list-box.manage-tree-dtl-part table tbody td{text-align: left !important;}
+	.manager-task-list-name{padding: 0px 30px 30px;}
+	.manage-tree-dtl-part .manager-task-list-name-left h4{font-size: 32px;}
+	.manage-tree-dtl-part .dataTables_wrapper .row:last-child .col-md-5{max-width: 100%;flex: 0 0 100%;}
+	.manage-tree-dtl-part .dataTables_wrapper .row:last-child .col-md-7{max-width: 100%;flex: 0 0 100%;}
+	.manage-tree-dtl-part .dataTables_wrapper .row:first-child .col-md-6{max-width: 100%;flex: 0 0 100%;}
+	.dataTables_filter {padding: 15px;}
+	.admin-dashboard.manager-task-dash::before{min-height: 100%;}
+	.manage-tree-task-user .admin-dashboard-user-name{flex-wrap: nowrap;}
+	.admin-dashboard-list-box.manage-tree-dtl-part .view-job-table {white-space: normal;}
+	.manage-tree-dtl-part  .dataTables_wrapper .row {margin: 0px;}
+	.dataTables_length, .dataTables_filter, .dataTables_info{padding: 0px !important;}
+	.manage-tree-dtl-part #example_filter label{justify-content: flex-start;}
+}
+
+@media (max-width: 767px){
+.container{
+	max-width: 96% !important;
+}
+   /*login-page*/
+	.login-page-main{padding: 30px 30px 30px;height: 100vh;    flex-direction: column;
+    justify-content: center;}
+	.login-form-part-main{margin-top: 30px;padding: 30px;}
+	.login-form-dtl-main{padding-top: 15px;}
+	.logo a img {max-width: 70px;max-height: 70px;}
+	.login-form-head h2{font-size: 30px;}
+	.login-fo-pwd a{font-size: 16px;}
+	.info{font-size: 18px !important;}
+	.login-sing-in{padding-top: 20px;}
+	.login-form-emal-inp .login-inp{margin-bottom: 20px;padding: 0px 10px;font-size: 16px;}
+
+	/*dashboard*/
+	.admin-dashboard-leftsidebar{display: none;}
+	.admin-dashboard-sing-box{padding: 20px;min-height: 250px;border-radius: 15px;}
+	.admin-dashboard-sing-box-head h1{font-size: 36px;}
+	.admin-dashboard-sing-box-head h2{font-size: 26px;}
+	.admin-dashboard-sm-dtl h2 strong{font-size: 26px;}
+	.admin-dashboard-sm-dtl h2{font-size: 18px;}
+	.admin-dashboard-sm-dtl{padding-bottom: 5px;}
+	.admin-dashboard-sing-plus-icon{width: 50px;height: 50px;right: 20px;bottom: 20px;border-radius: 15px;}
+	.admin-dashboard-menu-part ul li a{padding: 20px;}
+	.admin-dashboard-leftsidebar-bg-part{min-height: 670px;}
+	.admin-dashboard-main{padding: 20px 20px 0px;}
+	.admin-dashboard-logo{padding: 20px;}
+	.admin-dashboard-sing-box-head {padding-bottom: 5px;}
+	.admin-dashboard-searchbar-part{padding: 10px 20px;margin-bottom: 20px;}
+	.admin-dashboard-right{padding-left: 0px;}
+	.admin-login-pr{width: 40px;height: 40px;}
+	.admin-dashboard-box-main .col-lg-6 {padding: 0px 10px 30px;max-width: 50%;flex: 0 0 50%;}
+	.admin-dashboard-box-main{width: calc(100% + 20px);margin: 0px -10px;}
+	.admin-dashboard-right-dtl h4{font-size: 18px;}
+	.admin-dashboard-right{padding-bottom: 30px;width: 100%;}
+	.admin-dashboard-leftsidebar{padding-bottom: 30px;width: 100%;}
+	.admin-dashboard-searchbar-part{border-radius: 15px;}
+	.admin-notification{padding: 0px 0px 0px 10px;margin-right: 10px;}
+
+	/*manageuser*/
+	.admin-dashboard-list-box table tr th{font-size: 18px;}
+	.admin-dashboard-user-dtl{padding: 5px 20px 20px;}
+	.admin-dashboard-list-box table thead{padding: 0px 10px 20px;}
+	.admin-dashboard-bottom-dtl{padding: 20px 20px 0px;}
+	.admin-dashboard-user-name h2{font-size: 30px;}
+	.admin-dashboard-list-box{display: inline-block;white-space: nowrap;overflow: auto;padding: 20px 0px;}
+	.admin-dashboard-list-box table tbody td{padding: 10px 5px;text-align: center !important;}
+	.admin-dashboard-list-box table tr th{padding: 0px 5px;text-align: center !important;}
+	.admin-dashboard-user-name h2 span{font-size: 34px;}
+	/*.admin-dashboard-searchbar{width: 100%;}*/
+	/*.admin-dashboard-searchbar form#search_form{width: 100%;margin-bottom: 10px;}
+	.admin-dashboard-searchbar .search-sm{max-width: 80%;}*/
+
+	.dropdown-menu-list .dropdown-menu{padding: 10px 0;}
+	.dropdown-menu-list .dropdown-menu .dropdown-item{font-size: 16px;padding: 5px 15px;}
+	.users-edit a img{max-width: 30px;}
+	.admin-dashboard-searchbar span.search-icn{top: 4px;}
+	.admin-dashboard-searchbar .search-sm{height: 35px;}
+	.admin-dashboard-searchbar span.search-icn img{max-width: 15px;}
+
+	/*adduser*/
+	.user-details-modal-main{padding: 20px;border-radius: 15px;}
+	.user-details-modal-main.add-users-sub-dtl .user-details-modal-main.add-users-sub-dtl{padding: 0px;}
+	.user-personla-dtl-right-side{padding-left: 0px;padding-top: 20px; width:100%;}
+	.modal-footer{padding: 0px 30px 30px;}
+	.edit-account-img{width: 150px;height: 150px;}
+	.user-details-head h2{font-size: 30px;}
+	.admin-dashboard-box-main{width: 100%;margin: 0px;}
+	.add-us-inp{margin-bottom: 20px;}
+	.user-personla-dtl{padding-top: 20px;}
+	.add-users-fr-sec-inp .col-lg-8, .add-users-fr-sec-inp .col-lg-4 {padding: 0px 10px; max-width: 100%;flex: auto;}
+	.edit-account-img{margin: 0px auto;}
+	.user-details-head{justify-content: center;}
+
+	/*managejob*/
+	.Manager-task-user-dtl .admin-dashboard-user-sm-list{padding-left: 0px;width: 100%;padding-top: 10px;margin: 0px 0px 0px -10px;}
+	.admin-dashboard-user-sm-list ul li{padding-left: 10px;}
+	.admin-dashboard-user-sm-list ul li strong{font-size: 20px;padding-left: 5px;}
+	.admin-dashboard-user-name h2{font-size: 36px;}
+	.manager-tree-table{display: inline-block;white-space: nowrap;overflow: auto;}
+	.manager-task-list-part-main .admin-dashboard-list-box table tbody td:first-child{padding-left: 10px;text-align: center !important;}
+	.admin-dashboard-list-box .manager-tree-table table tbody td{padding: 10px;font-size: 16px;}
+	.manager-tree-table .users-edit{width: 50px;padding-right: 0px;}
+	.manager-task-list-name{padding: 0px 20px 20px;}
+	.admin-dashboard-list-box .manager-tree-table table thead tr td{text-align: center !important;}
+	.admin-dashboard-list-box .manager-tree-table table thead tr td:last-child{text-align: right !important;}
+	.dropdown-menu-list .dropdown-menu{right: 10px !important;}
+	.pagination .page-link{padding: 7px 10px;}
+	.manager-task-list-name-left h4{font-size: 20px;}
+	.admin-dashboard-list-box table tr td{font-size: 16px;}
+
+	/*editjob*/
+	.user-details-modal-main.add-users-sub-dtl{margin: 0px;}
+	.user-personla-dtl-right-side.user-editjob-main .add-users-fr-sec-inp .col-lg-5{max-width: 100%;flex: 0 0 100%;}
+	.add-users-sm-inp.form-group label{font-size: 16px;}
+	.user-details-head h2{font-size: 28px;}
+	.user-personla-dtl-right-side.user-editjob-main textarea.add-us-inp{padding: 10px;}
+	.user-personla-dtl.user-right-sing-part {padding-top: 10px;}
+	.add-us-inp{font-size: 16px;}
+
+	/*edittree*/
+	.edit-tree-left-sidebar{width: 100%;}
+	.edit-tree-right-sidebar{width: 100%;padding:30px 0px 0px;}
+	.admin-dashboard-box-main.edit-tree-main-page .edit-tree-right-sidebar .col-lg-6{max-width: 100%;flex: 0 0 100%;}
+	.admin-dashboard-box-main.edit-tree-main-page .edit-tree-right-sidebar .add-us-inp{margin-bottom: 20px;}
+	.user-details-modal-main.add-users-sub-dtl{margin: 0px;}
+	.edit-tree-left-sidebar .user-pro-detail-content-right .col-12 {padding: 0;}
+	.add-us-inp{height: 40px;}
+
+	/*viewjob*/
+	.view-job-table table tbody tr td{font-size: 16px;padding: 10px;}
+	.user-personla-dtl{padding-top: 30px;}
+	.view-job-table{display: inline-block;white-space: nowrap;overflow: auto;}
+	.view-job-table table tbody tr td:last-child{width: 500px;max-width: 500px;white-space: normal;}
+	.view-job-table table{width: 950px !important;}
+	.view-job-table table tbody tr h4{font-size: 18px;}
+	.view-job-table-bottom-link-part ul li a{font-size: 16px;}
+	.user-personla-dtl.view-job-personla-dtl {padding-top: 20px;}
+
+	/*viewtree*/
+	.tree-images-table table tbody tr h4{font-size: 18px;}
+	.tree-images-table table tbody tr td{width: 50%;float: left;}
+	.tree-images-table table tbody tr td{font-size: 16px;}
+	.user-details-modal-main.add-users-sub-dtl.view-job-dtl-main .user-details-head{justify-content: space-between;}
+	.tree-report-page-main{padding-top: 20px;}
+
+	/*managetree*/
+	.manage-tree-dtl-part .dataTables_wrapper .row:nth-child(2){width: 100%;margin: 0;}
+	.manage-tree-dtl-part table#example{width: 800px;}
+	.manage-tree-dtl-part .dataTables_wrapper .row:nth-child(2) .col-sm-12 {display: inline-block;white-space: nowrap;overflow: auto;padding: 0px;}
+	.manage-tree-page-page .admin-dashboard-list-box.manage-tree-dtl-part table tbody td:first-child{text-align: left !important;}
+	.manage-tree-page-page .admin-dashboard-list-box.manage-tree-dtl-part table tbody td:nth-child(2) {padding-left: 0;white-space: normal;width: 500px !important;max-width: 500px;}
+	.manage-tree-dtl-part #example_filter label input.form-control.form-control-sm{width: calc(100% - 80px);}
+	/*.manager-task-list-name{padding: 0px 30px 30px;}*/
+	.manage-tree-dtl-part .manager-task-list-name-left h4{font-size: 28px;}
+	.manage-tree-dtl-part .dataTables_wrapper .row:last-child .col-md-5{max-width: 100%;flex: 0 0 100%;}
+	.manage-tree-dtl-part .dataTables_wrapper .row:last-child .col-md-7{max-width: 100%;flex: 0 0 100%;}
+	.manage-tree-dtl-part .dataTables_wrapper .row:first-child .col-md-6{max-width: 100%;flex: 0 0 100%;}
+	.dataTables_filter {padding: 15px;}
+	.admin-dashboard.manager-task-dash::before{min-height: 100%;}
+	.manage-tree-task-user .admin-dashboard-user-name{flex-wrap: nowrap;}
+	.admin-dashboard-list-box.manage-tree-dtl-part .view-job-table {white-space: normal;}
+	.manage-tree-dtl-part  .dataTables_wrapper .row {margin: 0px;}
+	.dataTables_length, .dataTables_filter, .dataTables_info{padding: 0px !important;}
+	.manage-tree-dtl-part #example_filter label{justify-content: flex-start;}
+	.manage-tree-page-page .admin-dashboard-list-box.manage-tree-dtl-part table tbody td{text-align: left !important;}
+	.dataTables_length, .dataTables_filter, .dataTables_info{font-size: 16px;}
+	.manager-task-list-part-main .admin-dashboard-list-box.manage-tree-dtl-part table tbody td:first-child{padding-left: 10px;}
+	.manager-task-list-part-main .admin-dashboard-list-box.manage-tree-dtl-part table tbody td .users-edit{padding-right:10px;}
+
+	.admin-responsive-topbar{display: flex;flex-wrap: wrap;padding: 0px 0px 20px;}
+	.admin-dashboard-right .admin-dashboard-searchbar{display: none;}
+	.admin-responsive-topbar .admin-dashboard-searchbar{margin-left: 40px;}
+	.admin-responsive-topbar .admin-dashboard-searchbar .search-sm{max-width: 100%;width: 100%;background-color: #fff;}
+	.admin-dashboard-leftsidebar-bg-part{border-radius: 0px;}
+	body.res-menu-open .mobile-menu-toggle {left: 240px;z-index: 9;}
+	.admin-dashboard-leftsidebar{position: fixed;left: 0px;top: 0px;width: 240px;display: block;
+    transform: translateX(-100%);
+    transition: all 0.5s ease;z-index: 999;}
+	.sidebar-open{transform: translateX(0%);}
+	.admin-dashboard-searchbar-part{justify-content: flex-end;}
+	.admin-dashboard-right-dtl h4{    width: calc(100% - 60px);}
+
+	.view-tree-table-scroll{    display: inline-block;
+    white-space: nowrap;
+    overflow: auto;}
+}
+
+
+
+@media screen and (max-width:575px){
+
+	/*login-page*/
+	.login-page-main{padding: 30px 10px 30px;}
+	.login-form-part-main{padding: 15px;}
+	.login-form-head h2{font-size: 24px;}
+	.login-sing-in{padding-top: 10px;}
+	.login-form-emal-inp .login-inp{margin-top: 15px;}
+
+	/*dashboard*/
+	.admin-dashboard-box-main .col-lg-6 {padding: 0px 0px 20px;max-width: 100%;flex: 0 0 100%;}
+	.admin-dashboard-box-main{width: 100%;margin: 0px;}
+	.admin-dashboard-searchbar-part{padding: 10px;}
+	.admin-dashboard-right-dtl h4{font-size: 16px;}
+	.admin-dashboard-main {padding: 20px 10px 0px;}
+
+	/*adduser*/
+	.user-details-head h2{font-size: 26px;}
+	.user-details-modal-main{padding: 15px;}
+	.manage-tree-dtl-part .manager-task-list-name-left h4{font-size: 26px;}
+}
+
+
+@media screen and (max-width:480px){
+
+	.view-job-table-bottom-link-part ul li{padding: 0px;width: 100%;}
+	.tree-images-table table tbody tr td{width: 100%;float: left;}
+	.manage-tree-dtl-part #example_filter label input.form-control.form-control-sm{width: 100%;margin-left: 0px;margin-top: 10px;}
+}

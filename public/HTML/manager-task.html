@@ -1,0 +1,684 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Manager Task</title>
+        <link rel="stylesheet" href="css/bootstrap.min.css">
+        <link rel="stylesheet" href="css/fontawesome-all.css" >
+        <link rel="stylesheet" href="css/searchboxstyle.css">
+        <link rel="stylesheet" href="css/slick.css">
+        <link rel="stylesheet" href="css/slick-theme.css">
+        <link rel="stylesheet" href="css/style.css" >
+        <link rel="stylesheet" href="css/responsive.css" >
+    </head>
+    <body>
+        <div class="main" id="main-site">
+            <div class="admin-dashboard manager-task-dash">
+                <div class="container">
+                    <div class="admin-dashboard-main">
+                        <div class="admin-dashboard-leftsidebar">
+                            <div class="admin-dashboard-leftsidebar-bg-part">
+                                <div class="admin-dashboard-logo">
+                                    <a href="javascript:;">
+                                    <img src="images/Logo_img.png">
+                                    </a>
+                                </div>
+                                <div class="admin-dashboard-menu-part">
+                                    <ul>
+                                        <li>
+                                            <a href="javascript:;">
+                                            <img src="images/dashboard-icn.png">
+                                            <span>DASHBOARD</span>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="javascript:;" >
+                                            <img src="images/Users-icn.png">
+                                            <span>Manage Users</span>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="javascript:;">
+                                            <img src="images/Area.png">
+                                            <span>Manage Areas</span>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="javascript:;" class="active">
+                                            <img src="images/clc-icn.png">
+                                            <span>TASKS Schedule</span>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="javascript:;">
+                                            <img src="images/report-icn.png">
+                                            <span>REPORTS<span class="badge"></span></span>
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div class="admin-dashboard-messages-icn">
+                                    <ul>
+                                        <li>
+                                            <a href="javascript:;">
+                                            <img src="images/Union.png">
+                                            <span>Messages<span class="badge"></span></span>
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="admin-dashboard-right Manager-task-right-main">
+                            <div class="admin-dashboard-searchbar-part">
+                                <div class="admin-dashboard-searchbar">
+                                    <span class="search-icn"><img src="images/search.png"></span>
+                                    <input type="text" name="Search" placeholder="Search" class="search-sm">
+                                </div>
+                                <div class="admin-dashboard-right-dtl">
+                                    <h4>Hi Jeffrey! You are admin</h4>
+                                    <div class="admin-notification">
+                                        <img src="images/bell.png">
+                                        <span class="noti-dig">+99</span>
+                                    </div>
+                                    <div class="admin-login-pr blue-border">
+                                        <img src="images/men.png">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="admin-dashboard-user-dtl Manager-task-user-dtl">
+                                <div class="admin-dashboard-user-left-dtl">
+                                    <div class="admin-dashboard-user-name">
+                                        <h2>TASKS:(<span>12</span>)</h2>
+                                    </div>
+                                    <div class="admin-dashboard-user-sm-list">
+                                        <ul>
+                                            <li>New <strong>3</strong></li>
+                                            <li>In progress:<strong>1</strong></li>
+                                            <li>Checked:<strong>8</strong></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                <div class="admin-dashboard-user-right-dtl">
+                                    <div class="admin-dashboard-sing-plus-icon">
+                                        <a href="javascript:;"><img src="images/plus.png"></a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="admin-list-part manager-task-list-part-main">
+                                <div class="admin-dashboard-list-box">
+                                    <div class="manager-task-list-name">
+                                        <div class="manager-task-list-name-left">
+                                            <h4>New Tasks:</h4>
+                                        </div>
+                                        <div class="manager-task-list-name-left">
+                                            <div class="edit-select">
+                                                <div class="add-users-role country add-us-inp">
+                                                    <div id="country" class="select">
+                                                        <span>Edit selected</span>
+                                                    </div>
+                                                    <div id="country-drop" class="dropdown">
+                                                        <ul>
+                                                            <li>Move to new</li>
+                                                            <li>Move to done</li>
+                                                            <li>Delete</li>
+                                                        </ul>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <table>
+                                        <thead>
+                                            <tr>
+                                                <th>
+                                                    <div class="users-name">
+                                                        <h6>ID</h6>
+                                                    </div>
+                                                </th>
+                                                <th class="manager-task-address">
+                                                    <div class="users-name">
+                                                        <h6>Address</h6>
+                                                        <input type="text" name="Start typing" placeholder="Start typing" class="user-name-search">
+                                                    </div>
+                                                </th>
+                                                <th class="manager-task-posted">
+                                                    <div class="users-name">
+                                                        <h6>Posted</h6>
+                                                    </div>
+                                                </th>
+                                                <th>
+                                                    <div class="users-name" style="text-align: right;padding-left: 12px;">
+                                                        <h6>Operator</h6>
+                                                        <input type="text" name="Start typing" placeholder="Start typing" class="user-name-search">
+                                                    </div>
+                                                </th>
+                                                <th></th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td>AB001</td>
+                                                <td class="manager-task-address">
+                                                   <div class="user-pic-dtl">
+                                                       <label class="user-check">
+                                                          <input type="checkbox">
+                                                          <span class="checkmark"></span>
+                                                        </label>
+                                                        <div class="user-sm-pick-name">
+                                                            <h5>Washington, DC, 12244, USA</h5>
+                                                        </div>
+                                                   </div> 
+                                                </td>
+                                                <td style="text-align: right;width: 20%;">
+                                                    <div class="details-box">
+                                                        03.03.2021
+                                                    </div>
+                                                </td>
+                                                <td>
+                                                    <div class="user-sm-pick-name">
+                                                        <div class="admin-login-pr green-border">
+                                                            <img src="images/lady4.png">
+                                                        </div>
+                                                        <h5>Natalia Arero</h5>
+                                                    </div>
+                                                </td>
+                                                <td style="text-align: right;width: 11%;">
+                                                    <div class="users-edit">
+                                                        <a href="javascript:;">
+                                                            <img src="images/pen.png">
+                                                            Edit
+                                                        </a>
+                                                    </div>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>DC001</td>
+                                                <td class="manager-task-address">
+                                                   <div class="user-pic-dtl">
+                                                       <label class="user-check">
+                                                          <input type="checkbox" checked="">
+                                                          <span class="checkmark"></span>
+                                                        </label>
+                                                        <div class="user-sm-pick-name">
+                                                            <h5>Washington, DC, 12244, USA</h5>
+                                                        </div>
+                                                   </div> 
+                                                </td>
+                                                <td style="text-align: right;width: 20%;">
+                                                    <div class="details-box">
+                                                        03.03.2021
+                                                        <div class="details-box-hover">Deatails →</div>
+                                                    </div>
+                                                </td>
+                                                <td>
+                                                    <div class="user-sm-pick-name">
+                                                        <div class="admin-login-pr green-border">
+                                                            <img src="images/lady4.png">
+                                                        </div>
+                                                        <h5>Natalia Arero</h5>
+                                                    </div>
+                                                </td>
+                                                <td style="text-align: right;width: 11%;">
+                                                    <div class="users-edit">
+                                                        <a href="javascript:;">
+                                                            <img src="images/pen.png">
+                                                            Edit
+                                                        </a>
+                                                    </div>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>AB001</td>
+                                                <td class="manager-task-address">
+                                                   <div class="user-pic-dtl">
+                                                       <label class="user-check">
+                                                          <input type="checkbox">
+                                                          <span class="checkmark"></span>
+                                                        </label>
+                                                        <div class="user-sm-pick-name">
+                                                            <h5>Washington, DC, 12244, USA</h5>
+                                                        </div>
+                                                   </div> 
+                                                </td>
+                                                <td style="text-align: right;width: 20%;">
+                                                    <div class="details-box">
+                                                        03.03.2021
+                                                    </div>
+                                                </td>
+                                                <td>
+                                                    <div class="user-sm-pick-name">
+                                                        <div class="admin-login-pr green-border">
+                                                            <img src="images/lady4.png">
+                                                        </div>
+                                                        <h5>Natalia Arero</h5>
+                                                    </div>
+                                                </td>
+                                                <td style="text-align: right;width: 11%;">
+                                                    <div class="users-edit">
+                                                        <a href="javascript:;">
+                                                            <img src="images/pen.png">
+                                                            Edit
+                                                        </a>
+                                                    </div>
+                                                </td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                    <div class="admin-dashboard-bottom-dtl">
+                                        <div class="admin-dashboard-bottom-left">
+                                            <nav aria-label="Page navigation example">
+                                                <ul class="pagination">
+                                                    <li class="page-item"><a class="page-link disble" href="javascript:;">Prev</a></li>
+                                                    <li class="page-item"><a class="page-link active" href="javascript:;">1</a></li>
+                                                    <li class="page-item"><a class="page-link" href="javascript:;">2</a></li>
+                                                    <li class="page-item"><a class="page-link" href="javascript:;">3</a></li>
+                                                    <li class="page-item"><a class="page-link" href="javascript:;">Next</a></li>
+                                                </ul>
+                                            </nav>
+                                        </div>
+                                        <div class="admin-dashboard-bottom-left admin-dashboard-bottom-right">
+                                            <div class="admin-dashboard-bottom-select">
+                                                <select class="ad-dsh-select">
+                                                    <option value="">Edit selected</option>
+                                                    <option value="">Edit selected1</option>
+                                                </select>
+                                                <div class="admin-edit-delete">
+                                                    <a href="javascript:;">Delete</a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="admin-dashboard-list-box">
+                                    <div class="manager-task-list-name">
+                                        <div class="manager-task-list-name-left">
+                                            <h4>In Progress:</h4>
+                                        </div>
+                                        <div class="manager-task-list-name-left">
+                                            <div class="edit-select">
+                                                <div class="add-users-role country add-us-inp">
+                                                    <div id="country1" class="select">
+                                                        <span>Edit selected</span>
+                                                    </div>
+                                                    <div id="country-drop" class="dropdown">
+                                                        <ul>
+                                                            <li>Move to new</li>
+                                                            <li>Move to done</li>
+                                                            <li>Delete</li>
+                                                        </ul>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <table>
+                                        <thead>
+                                            <tr>
+                                                
+                                                <th class="manager-task-address">
+                                                    <div class="users-name">
+                                                        <h6>Address</h6>
+                                                        <input type="text" name="Start typing" placeholder="Start typing" class="user-name-search">
+                                                    </div>
+                                                </th>
+                                                <th class="manager-task-posted">
+                                                    <div class="users-name">
+                                                        <h6>Posted</h6>
+                                                    </div>
+                                                </th>
+                                                <th>
+                                                    <div class="users-name" style="text-align: right;padding-left: 12px;">
+                                                        <h6>Operator</h6>
+                                                        <input type="text" name="Start typing" placeholder="Start typing" class="user-name-search">
+                                                    </div>
+                                                </th>
+                                                <th></th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td>AB001</td>
+                                                <td class="manager-task-address">
+                                                   <div class="user-pic-dtl">
+                                                       <label class="user-check">
+                                                          <input type="checkbox">
+                                                          <span class="checkmark"></span>
+                                                        </label>
+                                                        <div class="user-sm-pick-name">
+                                                            <h5>Washington, DC, 12244, USA</h5>
+                                                        </div>
+                                                   </div> 
+                                                </td>
+                                                <td style="text-align: right;width: 20%;">
+                                                    <div class="details-box">
+                                                        03.03.2021
+                                                    </div>
+                                                </td>
+                                                <td>
+                                                    <div class="user-sm-pick-name">
+                                                        <div class="admin-login-pr green-border">
+                                                            <img src="images/lady4.png">
+                                                        </div>
+                                                        <h5>Natalia Arero</h5>
+                                                    </div>
+                                                </td>
+                                                <td style="text-align: right;width: 11%;">
+                                                    <div class="users-edit">
+                                                        <a href="javascript:;">
+                                                            <img src="images/pen.png">
+                                                            Edit
+                                                        </a>
+                                                    </div>
+                                                </td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                    <div class="admin-dashboard-bottom-dtl">
+                                        <div class="admin-dashboard-bottom-left">
+                                            <nav aria-label="Page navigation example">
+                                                <ul class="pagination">
+                                                    <li class="page-item"><a class="page-link disble" href="javascript:;">Prev</a></li>
+                                                    <li class="page-item"><a class="page-link active" href="javascript:;">1</a></li>
+                                                    <li class="page-item"><a class="page-link" href="javascript:;">2</a></li>
+                                                    <li class="page-item"><a class="page-link" href="javascript:;">3</a></li>
+                                                    <li class="page-item"><a class="page-link" href="javascript:;">Next</a></li>
+                                                </ul>
+                                            </nav>
+                                        </div>
+                                        <div class="admin-dashboard-bottom-left admin-dashboard-bottom-right">
+                                            <div class="admin-dashboard-bottom-select">
+                                                <select class="ad-dsh-select">
+                                                    <option value="">Edit selected</option>
+                                                    <option value="">Edit selected1</option>
+                                                </select>
+                                                <div class="admin-edit-delete">
+                                                    <a href="javascript:;">Delete</a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="admin-dashboard-list-box">
+                                    <div class="manager-task-list-name">
+                                        <div class="manager-task-list-name-left">
+                                            <h4>DONE:</h4>
+                                        </div>
+                                        <div class="manager-task-list-name-left">
+                                            <div class="edit-select">
+                                                <div class="add-users-role country add-us-inp">
+                                                    <div id="country2" class="select">
+                                                        <span>Edit selected</span>
+                                                    </div>
+                                                    <div id="country-drop" class="dropdown">
+                                                        <ul>
+                                                            <li>Move to new</li>
+                                                            <li>Move to done</li>
+                                                            <li>Delete</li>
+                                                        </ul>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <table>
+                                        <thead>
+                                            <tr>
+                                                <th>
+                                                    <div class="users-name blank-id">
+                                                        
+                                                    </div>
+                                                </th>
+                                                <th class="manager-task-address">
+                                                    <div class="users-name">
+                                                        <h6>Address</h6>
+                                                        <input type="text" name="Start typing" placeholder="Start typing" class="user-name-search">
+                                                    </div>
+                                                </th>
+                                                <th class="manager-task-posted">
+                                                    <div class="users-name">
+                                                        <h6>Posted</h6>
+                                                    </div>
+                                                </th>
+                                                <th>
+                                                    <div class="users-name" style="text-align: right;padding-left: 12px;">
+                                                        <h6>Operator</h6>
+                                                        <input type="text" name="Start typing" placeholder="Start typing" class="user-name-search">
+                                                    </div>
+                                                </th>
+                                                <th></th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td>AB001</td>
+                                                <td class="manager-task-address">
+                                                   <div class="user-pic-dtl">
+                                                       <label class="user-check">
+                                                          <input type="checkbox">
+                                                          <span class="checkmark"></span>
+                                                        </label>
+                                                        <div class="user-sm-pick-name">
+                                                            <h5>Washington, DC, 12244, USA</h5>
+                                                        </div>
+                                                   </div> 
+                                                </td>
+                                                <td style="text-align: right;width: 20%;">
+                                                    <div class="details-box">
+                                                        03.03.2021
+                                                    </div>
+                                                </td>
+                                                <td>
+                                                    <div class="user-sm-pick-name">
+                                                        <div class="admin-login-pr green-border">
+                                                            <img src="images/lady4.png">
+                                                        </div>
+                                                        <h5>Natalia Arero</h5>
+                                                    </div>
+                                                </td>
+                                                <td style="text-align: right;width: 11%;">
+                                                    <div class="users-edit">
+                                                        <a href="javascript:;">
+                                                            <img src="images/pen.png">
+                                                            Edit
+                                                        </a>
+                                                    </div>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>DC001</td>
+                                                <td class="manager-task-address">
+                                                   <div class="user-pic-dtl">
+                                                       <label class="user-check">
+                                                          <input type="checkbox">
+                                                          <span class="checkmark"></span>
+                                                        </label>
+                                                        <div class="user-sm-pick-name">
+                                                            <h5>Washington, DC, 12244, USA</h5>
+                                                        </div>
+                                                   </div> 
+                                                </td>
+                                                <td style="text-align: right;width: 20%;">
+                                                    <div class="details-box">
+                                                        03.03.2021
+                                                    </div>
+                                                </td>
+                                                <td>
+                                                    <div class="user-sm-pick-name">
+                                                        <div class="admin-login-pr green-border">
+                                                            <img src="images/lady4.png">
+                                                        </div>
+                                                        <h5>Natalia Arero</h5>
+                                                    </div>
+                                                </td>
+                                                <td style="text-align: right;width: 11%;">
+                                                    <div class="users-edit">
+                                                        <a href="javascript:;">
+                                                            <img src="images/pen.png">
+                                                            Edit
+                                                        </a>
+                                                    </div>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>AB001</td>
+                                                <td class="manager-task-address">
+                                                   <div class="user-pic-dtl">
+                                                       <label class="user-check">
+                                                          <input type="checkbox">
+                                                          <span class="checkmark"></span>
+                                                        </label>
+                                                        <div class="user-sm-pick-name">
+                                                            <h5>Washington, DC, 12244, USA</h5>
+                                                        </div>
+                                                   </div> 
+                                                </td>
+                                                <td style="text-align: right;width: 20%;">
+                                                    <div class="details-box">
+                                                        03.03.2021
+                                                    </div>
+                                                </td>
+                                                <td>
+                                                    <div class="user-sm-pick-name">
+                                                        <div class="admin-login-pr green-border">
+                                                            <img src="images/lady4.png">
+                                                        </div>
+                                                        <h5>Natalia Arero</h5>
+                                                    </div>
+                                                </td>
+                                                <td style="text-align: right;width: 11%;">
+                                                    <div class="users-edit">
+                                                        <a href="javascript:;">
+                                                            <img src="images/pen.png">
+                                                            Edit
+                                                        </a>
+                                                    </div>
+                                                </td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                    <div class="admin-dashboard-bottom-dtl">
+                                        <div class="admin-dashboard-bottom-left">
+                                            <nav aria-label="Page navigation example">
+                                                <ul class="pagination">
+                                                    <li class="page-item"><a class="page-link disble" href="javascript:;">Prev</a></li>
+                                                    <li class="page-item"><a class="page-link active" href="javascript:;">1</a></li>
+                                                    <li class="page-item"><a class="page-link" href="javascript:;">2</a></li>
+                                                    <li class="page-item"><a class="page-link" href="javascript:;">3</a></li>
+                                                    <li class="page-item"><a class="page-link" href="javascript:;">Next</a></li>
+                                                </ul>
+                                            </nav>
+                                        </div>
+                                        <div class="admin-dashboard-bottom-left admin-dashboard-bottom-right">
+                                            <div class="admin-dashboard-bottom-select">
+                                                <select class="ad-dsh-select">
+                                                    <option value="">Edit selected</option>
+                                                    <option value="">Edit selected1</option>
+                                                </select>
+                                                <div class="admin-edit-delete">
+                                                    <a href="javascript:;">Delete</a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <script src="js/jquery.min.js"></script>
+        <script src="js/bootstrap.min.js"></script>
+        <script src="js/slick.min.js"></script>
+        <script type="text/javascript">
+        function countryDropdown(seletor){
+            var Selected = $(seletor);
+            var Drop = $(seletor+'-drop');
+            var DropItem = Drop.find('li');
+
+            Selected.click(function(){
+                Selected.toggleClass('open');
+                Drop.toggle();
+            });
+
+            Drop.find('li').click(function(){
+                Selected.removeClass('open');
+                Drop.hide();
+                
+                var item = $(this);
+                Selected.html(item.html());
+            });
+
+            DropItem.each(function(){
+                var code = $(this).attr('data-code');
+
+                if(code != undefined){
+                    var countryCode = code.toLowerCase();
+                    $(this).find('i').addClass('flagstrap-'+countryCode);
+                }
+            });
+        }
+        countryDropdown('#country');
+
+        function countryDropdown1(seletor){
+            var Selected1 = $(seletor1);
+            var Drop = $(seletor1+'-drop');
+            var DropItem = Drop.find('li');
+
+            Selected1.click(function(){
+                Selected1.toggleClass('open');
+                Drop.toggle();
+            });
+
+            Drop.find('li').click(function(){
+                Selected1.removeClass('open');
+                Drop.hide();
+                
+                var item = $(this);
+                Selected1.html(item.html());
+            });
+
+            DropItem.each(function(){
+                var code = $(this).attr('data-code');
+
+                if(code != undefined){
+                    var countryCode = code.toLowerCase();
+                    $(this).find('i').addClass('flagstrap-'+countryCode);
+                }
+            });
+        }
+        countryDropdown1('#country1');
+        function countryDropdown(seletor){
+            var Selected = $(seletor);
+            var Drop = $(seletor+'-drop');
+            var DropItem = Drop.find('li');
+
+            Selected.click(function(){
+                Selected.toggleClass('open');
+                Drop.toggle();
+            });
+
+            Drop.find('li').click(function(){
+                Selected.removeClass('open');
+                Drop.hide();
+                
+                var item = $(this);
+                Selected.html(item.html());
+            });
+
+            DropItem.each(function(){
+                var code = $(this).attr('data-code');
+
+                if(code != undefined){
+                    var countryCode = code.toLowerCase();
+                    $(this).find('i').addClass('flagstrap-'+countryCode);
+                }
+            });
+        }
+        countryDropdown('#country2');
+    </script>
+    </body>
+</html>
