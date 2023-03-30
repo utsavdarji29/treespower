@@ -11,6 +11,7 @@ use App\Models\Admin;
 use App\Models\User;
 use App\Models\Manager;
 use App\Models\Job;
+use App\import\ChunkReadFilter;
 use Validator;
 use SimpleSoftwareIO\QrCode\Facades\QrCode;
 use DB;
@@ -20,6 +21,8 @@ use PhpOffice\PhpSpreadsheet\Reader\Exception;
 use PhpOffice\PhpSpreadsheet\Writer\Xls;
 use PhpOffice\PhpSpreadsheet\IOFactory;
 use Illuminate\Support\Facades\Storage;
+use PhpOffice\PhpSpreadsheet\Worksheet\MemoryDrawing;
+use PhpOffice\PhpSpreadsheet\Worksheet\Drawing;
 
 class TreeController extends Controller 
 {
@@ -266,239 +269,224 @@ class TreeController extends Controller
         $data = array('type'=>'add','adminName' => $adminName,'data1'=>$data1);       
         return view('adminpanel.addtreeall', compact('data','adminName','admin','data1','adminimage'));
     }
-    public function saveall(Request $request) 
+    public function saveall(Request $request)
     {
-        $input = $request->all();
-        $imagePath = $input["excel"];
+        ini_set('max_execution_time', 0);
         $the_file = $request->file('excel');
+
+        /**  Identify the type of $inputFileName  **/
+        $inputFileType = \PhpOffice\PhpSpreadsheet\IOFactory::identify($the_file);
+
+        /**  Create a new Reader of the type that has been identified  **/
+        $reader = \PhpOffice\PhpSpreadsheet\IOFactory::createReader($inputFileType);
+        /**  Define how many rows we want to read for each "chunk"  **/
+        $chunkSize = 10;
+        /**  Create a new Instance of our Read Filter  **/
+        $chunkFilter = new ChunkReadFilter();
+
+        /**  Tell the Reader that we want to use the Read Filter  **/
+        $reader->setReadFilter($chunkFilter);
+
         $spreadsheet = IOFactory::load($the_file->getRealPath());
-        $sheet        = $spreadsheet->getActiveSheet();
-        $row_limit    = $sheet->getHighestDataRow();
-        $column_limit = $sheet->getHighestDataColumn();
-        $row_range    = range( 2, $row_limit );
-        $column_range = range( 'A', $column_limit );
-        $startcount = 2;
-        $data = array();
+        $sheet1 = $spreadsheet->getActiveSheet();
+        $highestRow = $sheet1->getHighestRow();
 
-        foreach ( $row_range as $key => $row ) {
-            $treeid = $sheet->getCell( 'A' . $row )->getValue();
-            $address = $sheet->getCell( 'B' . $row )->getValue();
-            $location = $sheet->getCell( 'C' . $row )->getValue();
-            $species = $sheet->getCell( 'D' . $row )->getValue();
-            $height = $sheet->getCell( 'E' . $row )->getValue();
-            $trunk_diameter = $sheet->getCell( 'F' . $row )->getValue();
-            $date_planted = $sheet->getCell('G'. $row)->getValue();
-            $date_planted = \PhpOffice\PhpSpreadsheet\Shared\Date::excelToDateTimeObject($date_planted)->format('Y-m-d');
-            $comments = $sheet->getCell( 'H' . $row )->getValue();
-            $age_range = $sheet->getCell( 'I' . $row )->getValue();
-            $vitality = $sheet->getCell( 'J' . $row )->getValue();
-            $soil_type = $sheet->getCell( 'K' . $row )->getValue();
-            $filename = $sheet->getCell( 'L' . $row )->getValue();
+        /**  Loop to read our worksheet in "chunk size" blocks  **/
+        for ($startRow = 2; $startRow <= $highestRow; $startRow += $chunkSize) {
+            /**  Tell the Read Filter which rows we want this iteration  **/
+            $chunkFilter->setRows($startRow, $chunkSize);
 
-            $getTree = Tree::where('treeid',$treeid)->get();
-            if (count($getTree) > 0) 
-            {
-                $addTree['treeid'] = $treeid;
-                $addTree['address'] = $address;
-                $addTree['location'] = $location;
-                $addTree['species'] = $species;
-                $addTree['height'] = $height;
-                $addTree['trunk_diameter'] = $trunk_diameter;
-                $addTree['date_planted'] = $date_planted;
-                $addTree['comments'] = $comments;
-                $addTree['age_range'] = $age_range;
-                $addTree['vitality'] = $vitality;
-                $addTree['soil_type'] = $soil_type;
-                
-                $tree = Tree::where('treeid',(string)$treeid)->update($addTree);
+            $spreadsheet = $reader->load($the_file->getRealPath());
+            $sheet = $spreadsheet->getActiveSheet();
+            $chunk = array_map('array_filter',$sheet->toArray(null, true, true, true));
+            $chunk = array_filter($chunk);
+            foreach ($chunk as $key => $row) {
+               
+                if ($key !== 1) {
+                    $treeid = $row['A'];
+                    $address = $row['B'];
+                    $location = $row['A'];
+                    $species = $row['D'];
+                    $height = $row['E'];
+                    $trunk_diameter = $row['F'];
+                    $date_planted = date('Y-m-d', strtotime($row['G']));
+                    $comments = $row['H'];
+                    $age_range = $row['I'];
+                    $vitality = $row['J'];
+                    $soil_type = $row['K']; //$sheet->getCell('K' . $row)->getValue();
 
-                $id = $getTree[0]->id;
-                foreach ($sheet->getDrawingCollection() as $drawing) {
-                    $coordinagesData = $drawing->getCoordinates();
-                    if(!empty($coordinagesData) && $coordinagesData[1] == $row){
-                        if ($drawing instanceof MemoryDrawing) {
-                            ob_start();
-                            call_user_func(
-                                $drawing->getRenderingFunction(),
-                                $drawing->getImageResource()
-                            );
-                            $imageContents = ob_get_contents();
-                            ob_end_clean();
-                            switch ($drawing->getMimeType()) {
-                                case MemoryDrawing::MIMETYPE_PNG :
-                                    $extension = 'png';
-                                    break;
-                                case MemoryDrawing::MIMETYPE_GIF:
-                                    $extension = 'gif';
-                                    break;
-                                case MemoryDrawing::MIMETYPE_JPEG :
-                                    $extension = 'jpg';
-                                    break;
-                            }
-                        } else {
-                            if ($drawing->getPath()) {
-                                // Check if the source is a URL or a file path
-                                if ($drawing->getIsURL()) {
-                                    $imageContents = file_get_contents($drawing->getPath());
-                                    $filePath = tempnam(sys_get_temp_dir(), 'Drawing');
-                                    file_put_contents($filePath , $imageContents);
-                                    $mimeType = mime_content_type($filePath);
-                                    // You could use the below to find the extension from mime type.
-                                    // https://gist.github.com/alexcorvi/df8faecb59e86bee93411f6a7967df2c#gistcomment-2722664
-                                    $extension = File::mime2ext($mimeType);
-                                    unlink($filePath);            
-                                }
-                                else {
-                                    $zipReader = fopen($drawing->getPath(),'r');
-                                    $imageContents = '';
-                                    while (!feof($zipReader)) {
-                                        $imageContents .= fread($zipReader,1024);
-                                    }
-                                    fclose($zipReader);
-                                    $extension = $drawing->getExtension();            
-                                }
-                            }
-                        }
-                        $myFileName = $drawing->getName().'.'.$extension;
+                    $getTree = Tree::where('treeid', $treeid)->get();
+                    if (count($getTree) > 0) {
+                        $addTree['treeid'] = $treeid;
+                        $addTree['address'] = $address;
+                        $addTree['location'] = $location;
+                        $addTree['species'] = $species;
+                        $addTree['height'] = $height;
+                        $addTree['trunk_diameter'] = $trunk_diameter;
+                        $addTree['date_planted'] = $date_planted;
+                        $addTree['comments'] = $comments;
+                        $addTree['age_range'] = $age_range;
+                        $addTree['vitality'] = $vitality;
+                        $addTree['soil_type'] = $soil_type;
+
+                        $tree = Tree::where('treeid', (string)$treeid)->update($addTree);
+
                         $id = $getTree[0]->id;
-                        $getImage = Treeimage::query()
-                                            ->where('tree_id','=',$id)
-                                            ->where('treeImage','=',$myFileName)
-                                            ->get();
-
-                        if (count($getImage) <= 0) 
-                        {
-                            $addtreeimage['treeImage'] = $myFileName;
-                            $addtreeimage['tree_id'] = $id;
-                            $addtreeimage['treeimage_date'] = date('Y-m-d');
-                            $addtreeimage['status'] = 0;
-                            $treeimage = Treeimage::create($addtreeimage);
-                            $upload_dir_path = public_path()."/uploads/Tree_Images";
-                            file_put_contents($upload_dir_path.'/'.$myFileName,$imageContents);
-                        }
-                    }
-                }
-                $tree_id = $id;
-            }
-            else 
-            {
-                $addTree['treeid'] = $treeid;
-                $addTree['address'] = $address;
-                $addTree['location'] = $location;
-                $addTree['species'] = $species;
-                $addTree['height'] = $height;
-                $addTree['trunk_diameter'] = $trunk_diameter;
-                $addTree['date_planted'] = $date_planted;
-                $addTree['comments'] = $comments;
-                $addTree['age_range'] = $age_range;
-                $addTree['vitality'] = $vitality;
-                $addTree['soil_type'] = $soil_type;
-
-                $tree = Tree::create($addTree);
-                foreach ($sheet->getDrawingCollection() as $drawing) {
-                    $coordinagesData = $drawing->getCoordinates();
-                    if(!empty($coordinagesData) && $coordinagesData[1] == $row){
-                        if ($drawing instanceof MemoryDrawing) {
-                            ob_start();
-                            call_user_func(
-                                $drawing->getRenderingFunction(),
-                                $drawing->getImageResource()
-                            );
-                            $imageContents = ob_get_contents();
-                            ob_end_clean();
-                            switch ($drawing->getMimeType()) {
-                                case MemoryDrawing::MIMETYPE_PNG :
-                                    $extension = 'png';
-                                    break;
-                                case MemoryDrawing::MIMETYPE_GIF:
-                                    $extension = 'gif';
-                                    break;
-                                case MemoryDrawing::MIMETYPE_JPEG :
-                                    $extension = 'jpg';
-                                    break;
-                            }
-                        } else {
-                            if ($drawing->getPath()) {
-                                // Check if the source is a URL or a file path
-                                if ($drawing->getIsURL()) {
-                                    $imageContents = file_get_contents($drawing->getPath());
-                                    $filePath = tempnam(sys_get_temp_dir(), 'Drawing');
-                                    file_put_contents($filePath , $imageContents);
-                                    $mimeType = mime_content_type($filePath);
-                                    // You could use the below to find the extension from mime type.
-                                    // https://gist.github.com/alexcorvi/df8faecb59e86bee93411f6a7967df2c#gistcomment-2722664
-                                    $extension = File::mime2ext($mimeType);
-                                    unlink($filePath);            
-                                }
-                                else {
-                                    $zipReader = fopen($drawing->getPath(),'r');
-                                    $imageContents = '';
-                                    while (!feof($zipReader)) {
-                                        $imageContents .= fread($zipReader,1024);
+                        foreach ($sheet->getDrawingCollection() as $drawing) {
+                            $coordinagesData = $drawing->getCoordinates();
+                            $coordinagesData = explode("L",$coordinagesData);
+                            if (!empty($coordinagesData) && $coordinagesData[1] == $key) {
+                                if ($drawing instanceof MemoryDrawing) {
+                                    ob_start();
+                                    call_user_func(
+                                        $drawing->getRenderingFunction(),
+                                        $drawing->getImageResource()
+                                    );
+                                    $imageContents = ob_get_contents();
+                                    ob_end_clean();
+                                    switch ($drawing->getMimeType()) {
+                                        case MemoryDrawing::MIMETYPE_PNG:
+                                            $extension = 'png';
+                                            break;
+                                        case MemoryDrawing::MIMETYPE_GIF:
+                                            $extension = 'gif';
+                                            break;
+                                        case MemoryDrawing::MIMETYPE_JPEG:
+                                            $extension = 'jpg';
+                                            break;
                                     }
-                                    fclose($zipReader);
-                                    $extension = $drawing->getExtension();            
+                                } else {
+                                    if ($drawing->getPath()) {
+                                        // Check if the source is a URL or a file path
+                                        if ($drawing->getIsURL()) {
+                                            $imageContents = file_get_contents($drawing->getPath());
+                                            $filePath = tempnam(sys_get_temp_dir(), 'Drawing');
+                                            file_put_contents($filePath, $imageContents);
+                                            $mimeType = mime_content_type($filePath);
+                                            // You could use the below to find the extension from mime type.
+                                            // https://gist.github.com/alexcorvi/df8faecb59e86bee93411f6a7967df2c#gistcomment-2722664
+                                            $extension = File::mime2ext($mimeType);
+                                            unlink($filePath);
+                                        } else {
+                                            $zipReader = fopen($drawing->getPath(), 'r');
+                                            $imageContents = '';
+                                            while (!feof($zipReader)) {
+                                                $imageContents .= fread($zipReader, 1024);
+                                            }
+                                            fclose($zipReader);
+                                            $extension = $drawing->getExtension();
+                                        }
+                                    }
+                                }
+                                $myFileName = $drawing->getName() . '.' . $extension;
+                                $id = $getTree[0]->id;
+                                $getImage = Treeimage::query()
+                                    ->where('tree_id', '=', $id)
+                                    ->where('treeImage', '=', $myFileName)
+                                    ->get();
+
+                                if (count($getImage) <= 0) {
+                                    $addtreeimage['treeImage'] = $myFileName;
+                                    $addtreeimage['tree_id'] = $id;
+                                    $addtreeimage['treeimage_date'] = date('Y-m-d');
+                                    $addtreeimage['status'] = 0;
+                                    $treeimage = Treeimage::create($addtreeimage);
+                                    $upload_dir_path = public_path() . "/uploads/Tree_Images";
+                                    file_put_contents($upload_dir_path . '/' . $myFileName, $imageContents);
                                 }
                             }
                         }
-                        $myFileName = $drawing->getName().'.'.$extension;
-                        $id = $tree->id;
-                        $getImage = Treeimage::query()
-                                            ->where('tree_id','=',$id)
-                                            ->where('treeImage','=',$myFileName)
-                                            ->get();
-                                            
-                            if (count($getImage) <= 0) 
-                            {
-                                $addtreeimage['treeImage'] = $myFileName;
-                                $addtreeimage['tree_id'] = $tree->id;
-                                $addtreeimage['treeimage_date'] = date('Y-m-d');
-                                $addtreeimage['status'] = 0;
-                                $treeimage = Treeimage::create($addtreeimage);
-                                $tree_id = $tree->id;
+                        $tree_id = $id;
+                    } else {
+                        $addTree['treeid'] = $treeid;
+                        $addTree['address'] = $address;
+                        $addTree['location'] = $location;
+                        $addTree['species'] = $species;
+                        $addTree['height'] = $height;
+                        $addTree['trunk_diameter'] = $trunk_diameter;
+                        $addTree['date_planted'] = $date_planted;
+                        $addTree['comments'] = $comments;
+                        $addTree['age_range'] = $age_range;
+                        $addTree['vitality'] = $vitality;
+                        $addTree['soil_type'] = $soil_type;
 
-                                $upload_dir_path = public_path()."/uploads/Tree_Images";
-                                file_put_contents($upload_dir_path.'/'.$myFileName,$imageContents);
+                        $tree = Tree::create($addTree);
+                        $tree_id = $tree->id;
+                        foreach ($sheet->getDrawingCollection() as $drawing) {
+                            $coordinagesData = $drawing->getCoordinates();
+                            $coordinagesData = explode("L",$coordinagesData);
+                            if (!empty($coordinagesData) && $coordinagesData[1] == $key) {
+                                if ($drawing instanceof MemoryDrawing) {
+                                    ob_start();
+                                    call_user_func(
+                                        $drawing->getRenderingFunction(),
+                                        $drawing->getImageResource()
+                                    );
+                                    $imageContents = ob_get_contents();
+                                    ob_end_clean();
+                                    switch ($drawing->getMimeType()) {
+                                        case MemoryDrawing::MIMETYPE_PNG:
+                                            $extension = 'png';
+                                            break;
+                                        case MemoryDrawing::MIMETYPE_GIF:
+                                            $extension = 'gif';
+                                            break;
+                                        case MemoryDrawing::MIMETYPE_JPEG:
+                                            $extension = 'jpg';
+                                            break;
+                                    }
+                                } else {
+                                    if ($drawing->getPath()) {
+                                        // Check if the source is a URL or a file path
+                                        if ($drawing->getIsURL()) {
+                                            $imageContents = file_get_contents($drawing->getPath());
+                                            $filePath = tempnam(sys_get_temp_dir(), 'Drawing');
+                                            file_put_contents($filePath, $imageContents);
+                                            $mimeType = mime_content_type($filePath);
+                                            // You could use the below to find the extension from mime type.
+                                            // https://gist.github.com/alexcorvi/df8faecb59e86bee93411f6a7967df2c#gistcomment-2722664
+                                            $extension = File::mime2ext($mimeType);
+                                            unlink($filePath);
+                                        } else {
+                                            $zipReader = fopen($drawing->getPath(), 'r');
+                                            $imageContents = '';
+                                            while (!feof($zipReader)) {
+                                                $imageContents .= fread($zipReader, 1024);
+                                            }
+                                            fclose($zipReader);
+                                            $extension = $drawing->getExtension();
+                                        }
+                                    }
+                                }
+                                $myFileName = $drawing->getName() . '.' . $extension;
+                                $id = $tree->id;
+                                $getImage = Treeimage::query()
+                                    ->where('tree_id', '=', $id)
+                                    ->where('treeImage', '=', $myFileName)
+                                    ->get();
+
+                                if (count($getImage) <= 0) {
+                                    $addtreeimage['treeImage'] = $myFileName;
+                                    $addtreeimage['tree_id'] = $tree->id;
+                                    $addtreeimage['treeimage_date'] = date('Y-m-d');
+                                    $addtreeimage['status'] = 0;
+                                    $treeimage = Treeimage::create($addtreeimage);
+                                    $tree_id = $tree->id;
+
+                                    $upload_dir_path = public_path() . "/uploads/Tree_Images";
+                                    file_put_contents($upload_dir_path . '/' . $myFileName, $imageContents);
+                                }
                             }
-                           
+                        }
                     }
                 }
             }
-            $startcount++;
-
-            $curl = curl_init();
-
-            $link = 'http://treespower.com.sg/treespower/viewtree/'.$tree_id;
-            $qrlink = urlencode($link);
-
-            curl_setopt_array($curl, array(
-                CURLOPT_URL => 'http://treespower.com.sg/treespower/public/qrDemo/index.php?contentId='.$qrlink,
-                CURLOPT_RETURNTRANSFER => true,
-                CURLOPT_ENCODING => '',
-                CURLOPT_MAXREDIRS => 60,
-                CURLOPT_TIMEOUT => 0,
-                CURLOPT_FOLLOWLOCATION => true,
-                CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
-                CURLOPT_CUSTOMREQUEST => 'GET',
-            ));
-
-            $response = curl_exec($curl);
-
-            curl_close($curl);
-            $result = json_decode($response, true);
-
-            $success = isset($result['success']) ? $result['success'] : 1;
-            if($success == 1)
-            {
-                $addtreeqr["qrImage"] = $result['fileName'];
-            }
-            $treeqr = Tree::where('id', '=', $tree_id)->update($addtreeqr);
         }
         // $input = $request->all();
-      
+
         // if(isset($input["excel"])){
         //     $imagePath = $input["excel"];
-           
+
         //     $extension  = pathinfo($imagePath->getClientOriginalName(), PATHINFO_EXTENSION);
         // }
 
@@ -538,7 +526,7 @@ class TreeController extends Controller
         //             $addTree['age_range'] = $age_range;
         //             $addTree['vitality'] = $vitality;
         //             $addTree['soil_type'] = $soil_type;
-                    
+
 
         //             $tree = Tree::where('treeid',$treeid)->update($addTree);
 
@@ -553,7 +541,7 @@ class TreeController extends Controller
         //                                 ->where('tree_id','=',$id)
         //                                 ->where('treeImage','=',$allImg[$g])
         //                                 ->get();
-                                        
+
         //                 if (count($getImage) <= 0) 
         //                 {
         //                     $addtreeimage['treeImage'] = $allImg[$g];
@@ -594,7 +582,7 @@ class TreeController extends Controller
         //                 }
         //             }
         //         }
-                
+
         //         $curl = curl_init();
 
         //         $link = 'http://treespower.com.sg/treespower/viewtree/'.$tree_id;
@@ -625,7 +613,7 @@ class TreeController extends Controller
         //     }
         //     fclose ( $handle );
         // }
-         return redirect()->route('adminpanel.tree.manage')->with('success', 'Tree Created successfully.');
+        return redirect()->route('adminpanel.tree.manage')->with('success', 'Tree Created successfully.');
     }
 
     public function edit($id) 
@@ -1052,6 +1040,7 @@ class TreeController extends Controller
                     'location' => $value['location'],
                     'species' => $value['species'],
                     'height' => $value['height'],
+                    'width' => $value['trunk_diameter'],
                     'date_planted' => date('d-m-Y',strtotime($value['date_planted'])),
                     'comments' => $value['comments'],
                     'age_range' => $value['age_range'],
@@ -1071,12 +1060,13 @@ class TreeController extends Controller
             $sheet->setCellValue('C1', 'Location');
             $sheet->setCellValue('D1', 'Species');
             $sheet->setCellValue('E1', 'Height (meter)');
-            $sheet->setCellValue('F1', 'Date Planted');
-            $sheet->setCellValue('G1', 'Comments');
-            $sheet->setCellValue('H1', 'Age Range');
-            $sheet->setCellValue('I1', 'Vitality');
-            $sheet->setCellValue('J1', 'Soil Type');
-            $sheet->setCellValue('K1', 'Tree Image');
+            $sheet->setCellValue('F1', 'Width (meter)');
+            $sheet->setCellValue('G1', 'Date Planted');
+            $sheet->setCellValue('H1', 'Comments');
+            $sheet->setCellValue('I1', 'Age Range');
+            $sheet->setCellValue('J1', 'Vitality');
+            $sheet->setCellValue('K1', 'Soil Type');
+            $sheet->setCellValue('L1', 'Tree Image');
 
             $sheet->getStyle('A1')->getFont()->setBold(true);
             $sheet->getStyle('B1')->getFont()->setBold(true);
@@ -1089,7 +1079,8 @@ class TreeController extends Controller
             $sheet->getStyle('I1')->getFont()->setBold(true);
             $sheet->getStyle('J1')->getFont()->setBold(true);
             $sheet->getStyle('K1')->getFont()->setBold(true);
-            $sheet->getColumnDimension('K')->setWidth(1000); 
+            $sheet->getStyle('L1')->getFont()->setBold(true);
+            $sheet->getColumnDimension('L')->setWidth(1000); 
             $rows = 2;
             foreach($finalArrayData as $data){
                 $imageCount = 0;
@@ -1100,23 +1091,24 @@ class TreeController extends Controller
                 $sheet->setCellValue('C' . $rows, $data['location']);
                 $sheet->setCellValue('D' . $rows, $data['species']);
                 $sheet->setCellValue('E' . $rows, $data['height']);
-                $sheet->setCellValue('F' . $rows, $data['date_planted']);
-                $sheet->setCellValue('G' . $rows, $data['comments']);
-                $sheet->setCellValue('H' . $rows, $data['age_range']);
-                $sheet->setCellValue('I' . $rows, $data['vitality']);
-                $sheet->setCellValue('J' . $rows, $data['soil_type']);
-                $sheet->setCellValue('K' . $rows, '');
+                $sheet->setCellValue('F' . $rows, $data['height']);
+                $sheet->setCellValue('G' . $rows, $data['date_planted']);
+                $sheet->setCellValue('H' . $rows, $data['comments']);
+                $sheet->setCellValue('I' . $rows, $data['age_range']);
+                $sheet->setCellValue('J' . $rows, $data['vitality']);
+                $sheet->setCellValue('K' . $rows, $data['soil_type']);
+                $sheet->setCellValue('L' . $rows, '');
                 
                 if(isset($data['tree_image']) && !empty($data['tree_image'])){
                     foreach($data['tree_image'] as $treeImage){
                         $sheet->getRowDimension($rows)->setRowHeight(50);
                         if(file_exists(public_path()."/uploads/Tree_Images/".$treeImage) && $treeImage){
-                            $drawing = new \PhpOffice\PhpSpreadsheet\Worksheet\Drawing();
-                            $drawing->setName('PhpSpreadsheet logo');
-                            $drawing->setDescription('PhpSpreadsheet logo');
+                            $drawing = new Drawing();
+                            $drawing->setName($treeImage);
+                            $drawing->setDescription($treeImage);
                             $drawing->setPath(public_path()."/uploads/Tree_Images/".$treeImage);
                             $drawing->setHeight(36);
-                            $drawing->setCoordinates('k'.$rows);
+                            $drawing->setCoordinates('L'.$rows);
                             if($imageCount != 0){
                                 $drawing->setOffsetX($setOffsetX);
                                 $drawing->setWidth(100); 
