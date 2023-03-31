@@ -21,6 +21,7 @@ use PhpOffice\PhpSpreadsheet\Reader\Exception;
 use PhpOffice\PhpSpreadsheet\Writer\Xls;
 use PhpOffice\PhpSpreadsheet\IOFactory;
 use Illuminate\Support\Facades\Storage;
+use PhpOffice\PhpSpreadsheet\Writer\Xlsx;
 use PhpOffice\PhpSpreadsheet\Worksheet\MemoryDrawing;
 use PhpOffice\PhpSpreadsheet\Worksheet\Drawing;
 
@@ -303,17 +304,17 @@ class TreeController extends Controller
             foreach ($chunk as $key => $row) {
                
                 if ($key !== 1) {
-                    $treeid = $row['A'];
-                    $address = $row['B'];
-                    $location = $row['A'];
-                    $species = $row['D'];
-                    $height = $row['E'];
-                    $trunk_diameter = $row['F'];
-                    $date_planted = date('Y-m-d', strtotime($row['G']));
-                    $comments = $row['H'];
-                    $age_range = $row['I'];
-                    $vitality = $row['J'];
-                    $soil_type = $row['K']; //$sheet->getCell('K' . $row)->getValue();
+                    $treeid = (isset($row['A']) && $row['A']) ? $row['A'] : '';
+                    $address = (isset($row['B']) && $row['B']) ? $row['B'] : '';
+                    $location = (isset($row['C']) && $row['C']) ? $row['C'] : '';
+                    $species = (isset($row['D']) && $row['D']) ? $row['D'] : '';;
+                    $height = (isset($row['E']) && $row['E']) ? $row['E'] : 0;
+                    $trunk_diameter = (isset($row['F']) && $row['F']) ? $row['F'] : '';
+                    $date_planted = (isset($row['G']) && $row['G']) ? date('Y-m-d', strtotime($row['G'])) : '';
+                    $comments = (isset($row['H']) && $row['H']) ? $row['H'] : '';
+                    $age_range = (isset($row['I']) && $row['I']) ? $row['I'] : '';
+                    $vitality = (isset($row['J']) && $row['J']) ? $row['J'] :'';
+                    $soil_type = (isset($row['K']) && $row['K']) ? $row['K'] : ''; //$sheet->getCell('K' . $row)->getValue();
 
                     $getTree = Tree::where('treeid', $treeid)->get();
                     if (count($getTree) > 0) {
@@ -1030,7 +1031,7 @@ class TreeController extends Controller
         
         $treeData = Tree::with('treeImage')->orderby('id','desc')->get()->toArray();
         $finalArrayData = [];
-        $fileName = 'treeReport_'.time().'.xls';
+        $fileName = 'treeReport_'.time().'.xlsx';
 
         if(!empty($treeData)){
             foreach($treeData as $key => $value){
@@ -1103,9 +1104,10 @@ class TreeController extends Controller
                     foreach($data['tree_image'] as $treeImage){
                         $sheet->getRowDimension($rows)->setRowHeight(50);
                         if(file_exists(public_path()."/uploads/Tree_Images/".$treeImage) && $treeImage){
+                            $treeImageName = substr($treeImage, 0, strrpos($treeImage, '.'));
                             $drawing = new Drawing();
-                            $drawing->setName($treeImage);
-                            $drawing->setDescription($treeImage);
+                            $drawing->setName($treeImageName);
+                            $drawing->setDescription($treeImageName);
                             $drawing->setPath(public_path()."/uploads/Tree_Images/".$treeImage);
                             $drawing->setHeight(36);
                             $drawing->setCoordinates('L'.$rows);
@@ -1118,7 +1120,6 @@ class TreeController extends Controller
                                 $drawing->setWidth(100); 
                                 $drawing->setHeight(60);   
                             }
-
                             $drawing->setWorksheet($sheet);
                         }
                         $imageCount++;
@@ -1128,7 +1129,7 @@ class TreeController extends Controller
                 $rows++;
             }
             $sheet->getDefaultColumnDimension()->setWidth(20);
-            $Excel_writer = new Xls($spreadSheet);
+            $Excel_writer = new Xlsx($spreadSheet);
             header('Content-Type: application/vnd.ms-excel');
             header('Content-Disposition: attachment;filename="'.$fileName.'"');
             header('Cache-Control: max-age=0');
